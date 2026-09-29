@@ -1,0 +1,444 @@
+# Siemens phone flash layouts.
+# base and length define FullFlash; each region offset is relative to base.
+# Optional 0/0 regions and derived UNKNOWN gaps are intentionally omitted.
+phones:
+  - name: A50
+    base: 0x800000
+    length: 0x400000
+    reset_offset: 0
+    regions:
+      - name: BCORE
+        offset: 0x000000
+        length: 0x010000
+      - name: LangPack
+        offset: 0x2C0000
+        length: 0x040000
+      - name: T9
+        offset: 0x380000
+        length: 0x030000
+      - name: EE_FS
+        offset: 0x3B0000
+        length: 0x020000
+      - name: EEPROM
+        offset: 0x3F0000
+        length: 0x010000
+  - name: A51/A52
+    base: 0x800000
+    length: 0x400000
+    reset_offset: 0
+    statistic_offset: 0x07FE00
+    entry_transfer_offset: 0x07FFFC
+    partition_boundaries:
+      - 0x080000
+      - 0x340000
+      - 0x360000
+      - 0x380000
+    regions:
+      - name: BCORE
+        offset: 0x000000
+        length: 0x020000
+      - name: T9
+        offset: 0x280000
+        length: 0x040000
+      - name: LangPack
+        offset: 0x300000
+        length: 0x040000
+      - name: EEPROM
+        offset: 0x3A0000
+        length: 0x060000
+  - name: A55/A56/A57
+    base: 0x800000
+    length: 0x800000
+    reset_offset: 0
+    statistic_offset: 0x07FE00
+    entry_transfer_offset: 0x07FFFC
+    regions:
+      - name: BCORE
+        offset: 0x000000
+        length: 0x020000
+      - name: T9
+        offset: 0x080000
+        length: 0x040000
+      - name: LangPack
+        offset: 0x5A0000
+        length: 0x060000
+      - name: EE_FS
+        offset: 0x680000
+        length: 0x060000
+      - name: FFS(A)
+        offset: 0x740000
+        length: 0x040000
+      - name: EEPROM
+        offset: 0x7A0000
+        length: 0x060000
+  - name: C55/C56/CT56
+    base: 0x800000
+    length: 0x800000
+    reset_offset: 0
+    statistic_offset: 0x07FE00
+    entry_transfer_offset: 0x07FFFC
+    regions:
+      - name: BCORE
+        offset: 0x000000
+        length: 0x020000
+      - name: T9
+        offset: 0x080000
+        length: 0x040000
+      - name: LangPack
+        offset: 0x600000
+        length: 0x080000
+      - name: EE_FS
+        offset: 0x680000
+        length: 0x060000
+      - name: FFS(A)
+        offset: 0x700000
+        length: 0x080000
+      - name: EEPROM
+        offset: 0x7A0000
+        length: 0x060000
+  - name: M55/M56
+    base: 0x000000
+    length: 0x1000000
+    reset_offset: 0
+    statistic_offset: 0x87FE00
+    entry_transfer_offset: 0x07FFFC
+    partition_boundaries:
+      - 0x070000
+      - 0x080000
+      - 0x200000
+    regions:
+      - name: LangPack
+        offset: 0x7A0000
+        length: 0x060000
+      - name: BCORE
+        offset: 0x800000
+        length: 0x010000
+      - name: T9
+        offset: 0x880000
+        length: 0x040000
+      - name: FFS_B
+        offset: 0xA80000
+        length: 0x070000
+      - name: EE_FS
+        offset: 0xBC0000
+        length: 0x030000
+      - name: FFS(A)
+        offset: 0xD00000
+        length: 0x200000
+      - name: EEPROM
+        offset: 0xFC0000
+        length: 0x030000
+  - name: S55/S56/S57
+    base: 0x400000
+    length: 0xC00000
+    reset_offset: 0x400000
+    statistic_offset: 0x47FE00
+    entry_transfer_offset: 0x47FFFC
+    chips:
+      - role: secondary
+        offset: 0x000000
+        length: 0x400000
+      - role: primary
+        offset: 0x400000
+        length: 0x800000
+        owns_reset: true
+        owns_metadata: true
+    regions:
+      - name: BCORE
+        offset: 0x400000
+        length: 0x010000
+      - name: T9
+        offset: 0x480000
+        length: 0x040000
+      - name: FFS(A)
+        offset: 0x6C0000
+        length: 0x100000
+      - name: EE_FS
+        offset: 0x7C0000
+        length: 0x030000
+      - name: LangPack
+        offset: 0xB00000
+        length: 0x070000
+      - name: EEPROM
+        offset: 0xBE0000
+        length: 0x020000
+  - name: SL55/SL56
+    base: 0x400000
+    length: 0xC00000
+    reset_offset: 0x400000
+    statistic_offset: 0x47FE00
+    entry_transfer_offset: 0x47FFFC
+    chips:
+      - role: secondary
+        offset: 0x000000
+        length: 0x400000
+      - role: primary
+        offset: 0x400000
+        length: 0x800000
+        owns_reset: true
+        owns_metadata: true
+    regions:
+      - name: LangPack
+        offset: 0x3A0000
+        length: 0x060000
+      - name: BCORE
+        offset: 0x400000
+        length: 0x010000
+      - name: T9
+        offset: 0x480000
+        length: 0x040000
+      - name: FFS_B
+        offset: 0x680000
+        length: 0x070000
+      - name: EE_FS
+        offset: 0x7C0000
+        length: 0x030000
+      - name: FFS(A)
+        offset: 0x900000
+        length: 0x1C0000
+      - name: EEPROM
+        offset: 0xBE0000
+        length: 0x020000
+  - name: A60/A62
+    base: 0x800000
+    length: 0x800000
+    reset_offset: 0
+    statistic_offset: 0x07FE00
+    entry_transfer_offset: 0x07FFFC
+    partition_boundaries:
+      - 0x080000
+      - 0x500000
+      - 0x550000
+    regions:
+      - name: BCORE
+        offset: 0x000000
+        length: 0x010000
+      - name: FFS_B
+        offset: 0x300000
+        length: 0x050000
+      - name: LangPack
+        offset: 0x600000
+        length: 0x050000
+      - name: FFS(A)
+        offset: 0x680000
+        length: 0x0A0000
+      - name: EEPROM
+        offset: 0x7C0000
+        length: 0x030000
+  - name: A65/C60
+    base: 0x000000
+    length: 0x1000000
+    reset_offset: 0
+    statistic_offset: 0x87FE00
+    entry_transfer_offset: 0x07FFFC
+    partition_boundaries:
+      - 0x070000
+      - 0x080000
+      - 0x400000
+      - 0x880000
+      - 0xFC0000
+    regions:
+      - name: LangPack
+        offset: 0x600000
+        length: 0x060000
+      - name: EEPROM
+        offset: 0x7C0000
+        length: 0x030000
+      - name: BCORE
+        offset: 0x800000
+        length: 0x010000
+      - name: FFS_B
+        offset: 0xA00000
+        length: 0x0C0000
+      - name: FFS(A)
+        offset: 0xD00000
+        length: 0x200000
+  - name: MC60
+    base: 0x000000
+    length: 0x1000000
+    reset_offset: 0
+    statistic_offset: 0x87FE00
+    entry_transfer_offset: 0x07FFFC
+    partition_boundaries:
+      - 0x070000
+      - 0x080000
+      - 0x200000
+      - 0x7C0000
+      - 0x7E0000
+      - 0x880000
+    regions:
+      - name: LangPack
+        offset: 0x760000
+        length: 0x060000
+      - name: BCORE
+        offset: 0x800000
+        length: 0x010000
+      - name: FFS_B
+        offset: 0xA80000
+        length: 0x070000
+      - name: EE_FS
+        offset: 0xBC0000
+        length: 0x030000
+      - name: FFS(A)
+        offset: 0xD00000
+        length: 0x200000
+      - name: FFS_C
+        offset: 0xF00000
+        length: 0x060000
+      - name: EEPROM
+        offset: 0xFC0000
+        length: 0x030000
+  - name: A70
+    base: 0x800000
+    length: 0x400000
+    regions:
+      - name: BCORE
+        offset: 0x000000
+        length: 0x010000
+      - name: LangPack
+        offset: 0x200000
+        length: 0x040000
+      - name: T9
+        offset: 0x2B0000
+        length: 0x050000
+      - name: EEPROM
+        offset: 0x3C0000
+        length: 0x030000
+  - name: A75
+    base: 0x800000
+    length: 0x800000
+    regions:
+      - name: BCORE
+        offset: 0x000000
+        length: 0x010000
+      - name: FFS_B
+        offset: 0x500000
+        length: 0x050000
+      - name: LangPack
+        offset: 0x600000
+        length: 0x060000
+      - name: FFS(A)
+        offset: 0x680000
+        length: 0x0A0000
+      - name: EEPROM
+        offset: 0x7C0000
+        length: 0x030000
+  - name: AX72/AX75
+    base: 0x000000
+    length: 0x1000000
+    regions:
+      - name: LangPack
+        offset: 0x600000
+        length: 0x060000
+      - name: EEPROM
+        offset: 0x7A0000
+        length: 0x060000
+      - name: BCORE
+        offset: 0x800000
+        length: 0x020000
+      - name: FFS_C
+        offset: 0xA80000
+        length: 0x100000
+      - name: EE_FS
+        offset: 0xBC0000
+        length: 0x040000
+      - name: FFS(A)
+        offset: 0xD00000
+        length: 0x180000
+      - name: FFS_B
+        offset: 0xE80000
+        length: 0x0E0000
+  - name: C110/CF110
+    base: 0x000000
+    length: 0x1000000
+    regions:
+      - name: LangPack
+        offset: 0x600000
+        length: 0x060000
+      - name: EEPROM
+        offset: 0x7A0000
+        length: 0x060000
+      - name: BCORE
+        offset: 0x800000
+        length: 0x020000
+      - name: FFS_C
+        offset: 0xA80000
+        length: 0x100000
+      - name: EE_FS
+        offset: 0xBC0000
+        length: 0x040000
+      - name: FFS(A)
+        offset: 0xD00000
+        length: 0x180000
+      - name: FFS_B
+        offset: 0xE80000
+        length: 0x0E0000
+  - name: CF62
+    base: 0x000000
+    length: 0x1000000
+    reset_offset: 0
+    statistic_offset: 0x87FE00
+    entry_transfer_offset: 0x07FFFC
+    partition_boundaries:
+      - 0x070000
+      - 0x080000
+      - 0x200000
+    regions:
+      - name: LangPack
+        offset: 0x760000
+        length: 0x060000
+      - name: BCORE
+        offset: 0x800000
+        length: 0x010000
+      - name: T9
+        offset: 0x880000
+        length: 0x040000
+      - name: FFS_C
+        offset: 0xA80000
+        length: 0x100000
+      - name: EE_FS
+        offset: 0xBC0000
+        length: 0x030000
+      - name: FFS(A)
+        offset: 0xCD0000
+        length: 0x1B0000
+      - name: FFS_B
+        offset: 0xE80000
+        length: 0x0E0000
+      - name: EEPROM
+        offset: 0xFC0000
+        length: 0x030000
+  - name: SX1
+    base: 0x800000
+    length: 0x800000
+    regions:
+      - name: BCORE
+        offset: 0x000000
+        length: 0x020000
+      - name: LangPack
+        offset: 0x260000
+        length: 0x020000
+      - name: EEPROM
+        offset: 0x7E0000
+        length: 0x020000
+  - name: AL21
+    base: 0x000000
+    length: 0x1000000
+    regions:
+      - name: BCORE
+        offset: 0x800000
+        length: 0x020000
+  - name: AF51
+    base: 0x000000
+    length: 0x1000000
+    regions:
+      - name: BCORE
+        offset: 0x800000
+        length: 0x020000
+  - name: A31
+    base: 0x000000
+    length: 0x1000000
+    regions:
+      - name: BCORE
+        offset: 0x800000
+        length: 0x020000
