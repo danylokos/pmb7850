@@ -1,0 +1,1519 @@
+{
+  "schema": "pmb7850-qemu-x55-matrix",
+  "schema_version": 2,
+  "synchronization_unit": "soc_ticks",
+  "content": "synthesized-fullflash",
+  "image_count": 36,
+  "total_size": 478150656,
+  "default_gates": [
+    "no-sim"
+  ],
+  "supported_gates": [
+    "no-sim",
+    "sim",
+    "supervised"
+  ],
+  "comparison_mode": "probe",
+  "limitations": [
+    "These are synthesized emulator inputs with generated identity and calibrated EEPROM records.",
+    "Validation covers bounded startup in CEMU and QEMU (100000-tick target, asynchronous QEMU stop), not full boot, UI, SIM, audio, or engine parity.",
+    "The 20000000-tick matrix budgets are probe settings, not qualified endpoints. Original-dump strict expectations do not apply.",
+    "Assembly recipes and donor files remain in private research. Firmware provenance is separate from the emulator source license."
+  ],
+  "devices": {
+    "a52": {
+      "name": "a52sw090101-556677-7ed281f9d842",
+      "image": "firmware/A52/a52sw090101-556677-7ed281f9d842.bin",
+      "sha256": "7ed281f9d8425d945877f1899544eba96c10708a719155980fac50f62e658d23",
+      "size": 4194304,
+      "model": "A52",
+      "langpack": 1,
+      "software_version": 9,
+      "t9_version": 1,
+      "topology": [
+        {
+          "role": "primary",
+          "model": "m58lw064d",
+          "size": 4194304
+        }
+      ],
+      "identity": {
+        "kind": "fsn",
+        "value": "1234ABCD"
+      },
+      "no_sim": {
+        "minimum_ticks": 20000000
+      },
+      "sim": {
+        "minimum_ticks": 20000000
+      },
+      "validation": {
+        "cemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 100000,
+          "pc": "0xa7138a"
+        },
+        "qemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 105665,
+          "pc": "0xa71132"
+        },
+        "boot_and_ui": "not-established-by-import-smoke"
+      },
+      "alternates": [
+        {
+          "name": "a52sw099109-556677-59f5bd4b649e",
+          "image": "firmware/A52/a52sw099109-556677-59f5bd4b649e.bin",
+          "sha256": "59f5bd4b649ef96fbb83a0b6ba8d1b67a235255bfa527aa11a36ca4b23c51c6b",
+          "size": 4194304,
+          "model": "A52",
+          "langpack": 91,
+          "software_version": 9,
+          "t9_version": 9,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "m58lw064d",
+              "size": 4194304
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xa7138a"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 264448,
+              "pc": "0xa71132"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        }
+      ]
+    },
+    "a55": {
+      "name": "a55sw090101-556677-01b1c98beba3",
+      "image": "firmware/A55/a55sw090101-556677-01b1c98beba3.bin",
+      "sha256": "01b1c98beba314898bcd61ca4848fe7ee6fcdc01ef8b513c6af0e228ed0a611a",
+      "size": 8388608,
+      "model": "A55",
+      "langpack": 1,
+      "software_version": 9,
+      "t9_version": 1,
+      "topology": [
+        {
+          "role": "primary",
+          "model": "m58lw064d",
+          "size": 8388608
+        }
+      ],
+      "identity": {
+        "kind": "fsn",
+        "value": "1234ABCD"
+      },
+      "no_sim": {
+        "minimum_ticks": 20000000
+      },
+      "sim": {
+        "minimum_ticks": 20000000
+      },
+      "validation": {
+        "cemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 100000,
+          "pc": "0xef7eb4"
+        },
+        "qemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 220355,
+          "pc": "0xef7c54"
+        },
+        "boot_and_ui": "not-established-by-import-smoke"
+      },
+      "alternates": [
+        {
+          "name": "a55sw110101-556677-3ff35ca247ea",
+          "image": "firmware/A55/a55sw110101-556677-3ff35ca247ea.bin",
+          "sha256": "3ff35ca247ead0e06f73d130654381508e9f75351402f4ebe9eeca349907188a",
+          "size": 8388608,
+          "model": "A55",
+          "langpack": 1,
+          "software_version": 11,
+          "t9_version": 1,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "m58lw064d",
+              "size": 8388608
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xef8002"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 234213,
+              "pc": "0xef8004"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        }
+      ]
+    },
+    "a60": {
+      "name": "a60sw270100-556677-02e4af694534",
+      "image": "firmware/A60/a60sw270100-556677-02e4af694534.bin",
+      "sha256": "02e4af69453476c8f5430116366b1ff7d992eabe18fe06023b2f277b442f92b9",
+      "size": 8388608,
+      "model": "A60",
+      "langpack": 1,
+      "software_version": 27,
+      "t9_version": 0,
+      "topology": [
+        {
+          "role": "primary",
+          "model": "am29lv640mh",
+          "size": 8388608
+        }
+      ],
+      "identity": {
+        "kind": "fsn",
+        "value": "1234ABCD"
+      },
+      "no_sim": {
+        "minimum_ticks": 20000000
+      },
+      "sim": {
+        "minimum_ticks": 20000000
+      },
+      "validation": {
+        "cemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 100000,
+          "pc": "0xa7e44c"
+        },
+        "qemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 226231,
+          "pc": "0xa7e44a"
+        },
+        "boot_and_ui": "not-established-by-import-smoke"
+      },
+      "alternates": [
+        {
+          "name": "a60sw279100-556677-96f5ff329660",
+          "image": "firmware/A60/a60sw279100-556677-96f5ff329660.bin",
+          "sha256": "96f5ff329660cfc95f945dda167d5180eab54a094f78b4601be2834c37921ebf",
+          "size": 8388608,
+          "model": "A60",
+          "langpack": 91,
+          "software_version": 27,
+          "t9_version": 0,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv640mh",
+              "size": 8388608
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xa7e44c"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 228028,
+              "pc": "0xa7e44a"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        }
+      ]
+    },
+    "a62": {
+      "name": "a62sw070100-556677-3ad881e8e308",
+      "image": "firmware/A62/a62sw070100-556677-3ad881e8e308.bin",
+      "sha256": "3ad881e8e308b55982a27c10b08ad9cd03ba4e83d9a9456f635656bf318ce269",
+      "size": 8388608,
+      "model": "A62",
+      "langpack": 1,
+      "software_version": 7,
+      "t9_version": 0,
+      "topology": [
+        {
+          "role": "primary",
+          "model": "am29lv640mh",
+          "size": 8388608
+        }
+      ],
+      "identity": {
+        "kind": "fsn",
+        "value": "1234ABCD"
+      },
+      "no_sim": {
+        "minimum_ticks": 20000000
+      },
+      "sim": {
+        "minimum_ticks": 20000000
+      },
+      "validation": {
+        "cemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 100000,
+          "pc": "0xa7e44c"
+        },
+        "qemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 224176,
+          "pc": "0xa7e44a"
+        },
+        "boot_and_ui": "not-established-by-import-smoke"
+      },
+      "alternates": [
+        {
+          "name": "a62sw079100-556677-877ff3470290",
+          "image": "firmware/A62/a62sw079100-556677-877ff3470290.bin",
+          "sha256": "877ff34702905e170661ab9d2919eba7b4f261db157f34aafb4cf668df63c55d",
+          "size": 8388608,
+          "model": "A62",
+          "langpack": 91,
+          "software_version": 7,
+          "t9_version": 0,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv640mh",
+              "size": 8388608
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xa7e44c"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 226459,
+              "pc": "0xa7e44a"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        }
+      ]
+    },
+    "a65": {
+      "name": "a65sw150100-556677-9db5ceeedfab",
+      "image": "firmware/A65/a65sw150100-556677-9db5ceeedfab.bin",
+      "sha256": "9db5ceeedfab80e993fd3a37d88dc443ef6198f8831b6dc2074e93d3aec2d298",
+      "size": 16777216,
+      "model": "A65",
+      "langpack": 1,
+      "software_version": 15,
+      "t9_version": 0,
+      "topology": [
+        {
+          "role": "primary",
+          "model": "am29lv128mh",
+          "size": 16777216
+        }
+      ],
+      "identity": {
+        "kind": "fsn",
+        "value": "1234ABCD"
+      },
+      "no_sim": {
+        "minimum_ticks": 20000000
+      },
+      "sim": {
+        "minimum_ticks": 20000000
+      },
+      "validation": {
+        "cemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 100000,
+          "pc": "0xcee44c"
+        },
+        "qemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 236281,
+          "pc": "0xcee44a"
+        },
+        "boot_and_ui": "not-established-by-import-smoke"
+      },
+      "alternates": [
+        {
+          "name": "a65sw159100-556677-21cd83e09558",
+          "image": "firmware/A65/a65sw159100-556677-21cd83e09558.bin",
+          "sha256": "21cd83e09558484012d61046e976c1a0b15acaa3b7012b0c54737cba9972d03a",
+          "size": 16777216,
+          "model": "A65",
+          "langpack": 91,
+          "software_version": 15,
+          "t9_version": 0,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv128mh",
+              "size": 16777216
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xcee44c"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 233917,
+              "pc": "0xcee44a"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        },
+        {
+          "name": "a65sw170100-556677-55e0afaee750",
+          "image": "firmware/A65/a65sw170100-556677-55e0afaee750.bin",
+          "sha256": "55e0afaee7505c97e4c8003f827159f71f3dc46125bfcf98c96a47907b9aebca",
+          "size": 16777216,
+          "model": "A65",
+          "langpack": 1,
+          "software_version": 17,
+          "t9_version": 0,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv128mh",
+              "size": 16777216
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xcee44c"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 105894,
+              "pc": "0xcee44a"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        },
+        {
+          "name": "a65sw179100-556677-e083d19cf8e4",
+          "image": "firmware/A65/a65sw179100-556677-e083d19cf8e4.bin",
+          "sha256": "e083d19cf8e4bd6f7b34d18a4ed71b8aec0db4e01b148b427955641f10dc51a0",
+          "size": 16777216,
+          "model": "A65",
+          "langpack": 91,
+          "software_version": 17,
+          "t9_version": 0,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv128mh",
+              "size": 16777216
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xcee44c"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 226978,
+              "pc": "0xcee44a"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        }
+      ]
+    },
+    "c55": {
+      "name": "c55sw240101-556677-20dd57d8ec1f",
+      "image": "firmware/C55/c55sw240101-556677-20dd57d8ec1f.bin",
+      "sha256": "20dd57d8ec1ff5d8b9cd98b6bf39da656341907b59b33ada430603ed848035f0",
+      "size": 8388608,
+      "model": "C55",
+      "langpack": 1,
+      "software_version": 24,
+      "t9_version": 1,
+      "topology": [
+        {
+          "role": "primary",
+          "model": "m58lw064d",
+          "size": 8388608
+        }
+      ],
+      "identity": {
+        "kind": "fsn",
+        "value": "1234ABCD"
+      },
+      "no_sim": {
+        "minimum_ticks": 20000000
+      },
+      "sim": {
+        "minimum_ticks": 20000000
+      },
+      "validation": {
+        "cemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 100000,
+          "pc": "0xdc7266"
+        },
+        "qemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 216927,
+          "pc": "0xdc71d4"
+        },
+        "boot_and_ui": "not-established-by-import-smoke"
+      },
+      "alternates": [
+        {
+          "name": "c55sw249111-556677-d9258d0fe59a",
+          "image": "firmware/C55/c55sw249111-556677-d9258d0fe59a.bin",
+          "sha256": "d9258d0fe59ae7b6ff51a7b1bebe7ab636f7e35c72d090b70c49beeb496ce6b5",
+          "size": 8388608,
+          "model": "C55",
+          "langpack": 91,
+          "software_version": 24,
+          "t9_version": 11,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "m58lw064d",
+              "size": 8388608
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xdc7266"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 227951,
+              "pc": "0xdc71d4"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        },
+        {
+          "name": "c55sw850101-556677-609ab5eac346",
+          "image": "firmware/C55/c55sw850101-556677-609ab5eac346.bin",
+          "sha256": "609ab5eac346500e51d5befa7c6f88c6e6620664070439d5dfba32b43acc6f92",
+          "size": 8388608,
+          "model": "C55",
+          "langpack": 1,
+          "software_version": 85,
+          "t9_version": 1,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "m58lw064d",
+              "size": 8388608
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xdc6ace"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 222701,
+              "pc": "0xdc6a3c"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        }
+      ]
+    },
+    "c60": {
+      "name": "c60sw200100-556677-e0fbca5b0834",
+      "image": "firmware/C60/c60sw200100-556677-e0fbca5b0834.bin",
+      "sha256": "e0fbca5b083410a164a74048823fa135d8bf0f0dd5cc51b235a6ff4fed9baacf",
+      "size": 16777216,
+      "model": "C60",
+      "langpack": 1,
+      "software_version": 20,
+      "t9_version": 0,
+      "topology": [
+        {
+          "role": "primary",
+          "model": "am29lv128mh",
+          "size": 16777216
+        }
+      ],
+      "identity": {
+        "kind": "fsn",
+        "value": "1234ABCD"
+      },
+      "no_sim": {
+        "minimum_ticks": 20000000
+      },
+      "sim": {
+        "minimum_ticks": 20000000
+      },
+      "validation": {
+        "cemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 100000,
+          "pc": "0xcee44c"
+        },
+        "qemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 235966,
+          "pc": "0xcee44a"
+        },
+        "boot_and_ui": "not-established-by-import-smoke"
+      },
+      "alternates": [
+        {
+          "name": "c60sw209100-556677-8f3cb635d5b5",
+          "image": "firmware/C60/c60sw209100-556677-8f3cb635d5b5.bin",
+          "sha256": "8f3cb635d5b53aaaaa4d09215207ea4a90bee8d2dc5472eb5506ace7481f41ef",
+          "size": 16777216,
+          "model": "C60",
+          "langpack": 91,
+          "software_version": 20,
+          "t9_version": 0,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv128mh",
+              "size": 16777216
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xcee44c"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 109146,
+              "pc": "0xcee44a"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        },
+        {
+          "name": "c60sw270100-556677-40278530250b",
+          "image": "firmware/C60/c60sw270100-556677-40278530250b.bin",
+          "sha256": "40278530250bdd72d34a0d4897eaf1510d2ddb1acf3da4a4ca24446248858a32",
+          "size": 16777216,
+          "model": "C60",
+          "langpack": 1,
+          "software_version": 27,
+          "t9_version": 0,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv128mh",
+              "size": 16777216
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xcee44c"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 224293,
+              "pc": "0xcee44a"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        },
+        {
+          "name": "c60sw279100-556677-b606aced043c",
+          "image": "firmware/C60/c60sw279100-556677-b606aced043c.bin",
+          "sha256": "b606aced043c7a52507488ff4154fb75cfaaf62be41f15ae9113079508a00f2c",
+          "size": 16777216,
+          "model": "C60",
+          "langpack": 91,
+          "software_version": 27,
+          "t9_version": 0,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv128mh",
+              "size": 16777216
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xcee44c"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 241471,
+              "pc": "0xcee44a"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        }
+      ]
+    },
+    "cf62": {
+      "name": "cf62sw070101-556677-673196a82a32",
+      "image": "firmware/CF62/cf62sw070101-556677-673196a82a32.bin",
+      "sha256": "673196a82a3290481b25ca1a0c4f52fb441d456b24c2c07f7fb8ca026553f7eb",
+      "size": 16777216,
+      "model": "CF62",
+      "langpack": 1,
+      "software_version": 7,
+      "t9_version": 1,
+      "topology": [
+        {
+          "role": "primary",
+          "model": "am29lv128mh",
+          "size": 16777216
+        }
+      ],
+      "identity": {
+        "kind": "fsn",
+        "value": "1234ABCD"
+      },
+      "no_sim": {
+        "minimum_ticks": 20000000
+      },
+      "sim": {
+        "minimum_ticks": 20000000
+      },
+      "validation": {
+        "cemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 100000,
+          "pc": "0xbfe5fc"
+        },
+        "qemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 219917,
+          "pc": "0xbfe5fe"
+        },
+        "boot_and_ui": "not-established-by-import-smoke"
+      },
+      "alternates": [
+        {
+          "name": "cf62sw079111-556677-2a26541fa1d4",
+          "image": "firmware/CF62/cf62sw079111-556677-2a26541fa1d4.bin",
+          "sha256": "2a26541fa1d4c712a2ab16e765ebb86b4ee42cf07746b96d723c6b8c741deba3",
+          "size": 16777216,
+          "model": "CF62",
+          "langpack": 91,
+          "software_version": 7,
+          "t9_version": 11,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv128mh",
+              "size": 16777216
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xbfe5fc"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 227517,
+              "pc": "0xbfe5fe"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        },
+        {
+          "name": "cf62sw240101-556677-bb223dc250c5",
+          "image": "firmware/CF62/cf62sw240101-556677-bb223dc250c5.bin",
+          "sha256": "bb223dc250c5d29c24afce7c6885057ceb132927668ac25b9c79747ed126a9d3",
+          "size": 16777216,
+          "model": "CF62",
+          "langpack": 1,
+          "software_version": 24,
+          "t9_version": 1,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv128mh",
+              "size": 16777216
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xbfe5fc"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 225621,
+              "pc": "0xbfe5fe"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        },
+        {
+          "name": "cf62sw249111-556677-1a6b2f3b5e9c",
+          "image": "firmware/CF62/cf62sw249111-556677-1a6b2f3b5e9c.bin",
+          "sha256": "1a6b2f3b5e9cc7a23a87b603032ce4e3cf2fb656c66912f3436dbadb963cd8cb",
+          "size": 16777216,
+          "model": "CF62",
+          "langpack": 91,
+          "software_version": 24,
+          "t9_version": 11,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv128mh",
+              "size": 16777216
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xbfe5fc"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 240108,
+              "pc": "0xbfe5fe"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        }
+      ]
+    },
+    "m55": {
+      "name": "m55sw910101-556677-5fd09b56b89d",
+      "image": "firmware/M55/m55sw910101-556677-5fd09b56b89d.bin",
+      "sha256": "5fd09b56b89d4b8f1d96921304c24bfb6474fea373eea4e13e425d858d5b50f2",
+      "size": 16777216,
+      "model": "M55",
+      "langpack": 1,
+      "software_version": 91,
+      "t9_version": 1,
+      "topology": [
+        {
+          "role": "primary",
+          "model": "am29lv128mh",
+          "size": 16777216
+        }
+      ],
+      "identity": {
+        "kind": "fsn",
+        "value": "1234ABCD"
+      },
+      "no_sim": {
+        "minimum_ticks": 20000000
+      },
+      "sim": {
+        "minimum_ticks": 20000000
+      },
+      "validation": {
+        "cemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 100000,
+          "pc": "0xbfe5f8"
+        },
+        "qemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 220877,
+          "pc": "0xbfe5fa"
+        },
+        "boot_and_ui": "not-established-by-import-smoke"
+      },
+      "alternates": [
+        {
+          "name": "m55sw100101-556677-294a26eaaaf6",
+          "image": "firmware/M55/m55sw100101-556677-294a26eaaaf6.bin",
+          "sha256": "294a26eaaaf6ec3fd014eab7f4451697f80621d002ec66374da8c1568ab6198f",
+          "size": 16777216,
+          "model": "M55",
+          "langpack": 1,
+          "software_version": 10,
+          "t9_version": 1,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv128mh",
+              "size": 16777216
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xbfe5f8"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 227745,
+              "pc": "0xbfe5fa"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        },
+        {
+          "name": "m55sw110101-556677-309c7415cb75",
+          "image": "firmware/M55/m55sw110101-556677-309c7415cb75.bin",
+          "sha256": "309c7415cb75aa6c79dad4751b2959b9842c382b5ad92531d4b20dfb30b98ee1",
+          "size": 16777216,
+          "model": "M55",
+          "langpack": 1,
+          "software_version": 11,
+          "t9_version": 1,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv128mh",
+              "size": 16777216
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xbfe5f8"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 230994,
+              "pc": "0xbfe5fa"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        },
+        {
+          "name": "m55sw919111-556677-794ab6730bde",
+          "image": "firmware/M55/m55sw919111-556677-794ab6730bde.bin",
+          "sha256": "794ab6730bdedc31056d1d6a085c6e77b70297adb835ecb5130b39f51479475a",
+          "size": 16777216,
+          "model": "M55",
+          "langpack": 91,
+          "software_version": 91,
+          "t9_version": 11,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv128mh",
+              "size": 16777216
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xbfe5f8"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 103256,
+              "pc": "0xbfe5fa"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        }
+      ]
+    },
+    "mc60": {
+      "name": "mc60sw139100-556677-066f72eb9699",
+      "image": "firmware/MC60/mc60sw139100-556677-066f72eb9699.bin",
+      "sha256": "066f72eb9699bfcc419284d7378d3ebd72f3ccf2619ab118d927b6b553794468",
+      "size": 16777216,
+      "model": "MC60",
+      "langpack": 91,
+      "software_version": 13,
+      "t9_version": 0,
+      "topology": [
+        {
+          "role": "primary",
+          "model": "am29lv128mh",
+          "size": 16777216
+        }
+      ],
+      "identity": {
+        "kind": "fsn",
+        "value": "1234ABCD"
+      },
+      "no_sim": {
+        "minimum_ticks": 20000000
+      },
+      "sim": {
+        "minimum_ticks": 20000000
+      },
+      "validation": {
+        "cemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 100000,
+          "pc": "0xbfe5fc"
+        },
+        "qemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 220031,
+          "pc": "0xbfe5fe"
+        },
+        "boot_and_ui": "not-established-by-import-smoke"
+      },
+      "alternates": [
+        {
+          "name": "mc60sw100100-556677-1b3046ecda00",
+          "image": "firmware/MC60/mc60sw100100-556677-1b3046ecda00.bin",
+          "sha256": "1b3046ecda00541a995ed7cf5c430e529c1e35c8a4d0655e1c883cd523015a41",
+          "size": 16777216,
+          "model": "MC60",
+          "langpack": 1,
+          "software_version": 10,
+          "t9_version": 0,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv128mh",
+              "size": 16777216
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xbfe5fc"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 238590,
+              "pc": "0xbfe5fe"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        },
+        {
+          "name": "mc60sw130100-556677-094624ab5c62",
+          "image": "firmware/MC60/mc60sw130100-556677-094624ab5c62.bin",
+          "sha256": "094624ab5c62a1a46070931a3aad9de42a5514f9e8b021889916e4b04cd3dea4",
+          "size": 16777216,
+          "model": "MC60",
+          "langpack": 1,
+          "software_version": 13,
+          "t9_version": 0,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "am29lv128mh",
+              "size": 16777216
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xbfe5fc"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 228471,
+              "pc": "0xbfe5fe"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        }
+      ]
+    },
+    "s55": {
+      "name": "s55sw910101-556677-1541635902e1",
+      "image": "firmware/S55/s55sw910101-556677-1541635902e1.bin",
+      "sha256": "1541635902e190f35876c5b946db069df2b5d9b78ce28240e60f702ae9219283",
+      "size": 12582912,
+      "model": "S55",
+      "langpack": 1,
+      "software_version": 91,
+      "t9_version": 1,
+      "topology": [
+        {
+          "role": "primary",
+          "model": "w30-64mbit-top",
+          "size": 8388608
+        },
+        {
+          "role": "secondary",
+          "model": "m58lw064d",
+          "size": 4194304
+        }
+      ],
+      "identity": {
+        "kind": "fsn",
+        "value": "1234ABCD"
+      },
+      "no_sim": {
+        "minimum_ticks": 20000000
+      },
+      "sim": {
+        "minimum_ticks": 20000000
+      },
+      "validation": {
+        "cemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 100000,
+          "pc": "0xbf9c86"
+        },
+        "qemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 224534,
+          "pc": "0xbf9c86"
+        },
+        "boot_and_ui": "not-established-by-import-smoke"
+      },
+      "alternates": [
+        {
+          "name": "s55sw200101-556677-313f6a32a188",
+          "image": "firmware/S55/s55sw200101-556677-313f6a32a188.bin",
+          "sha256": "313f6a32a188256b1158535b381856df3b86b7f1ce40306ee026db42efeacfa2",
+          "size": 12582912,
+          "model": "S55",
+          "langpack": 1,
+          "software_version": 20,
+          "t9_version": 1,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "w30-64mbit-top",
+              "size": 8388608
+            },
+            {
+              "role": "secondary",
+              "model": "m58lw064d",
+              "size": 4194304
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xbf9c86"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 228908,
+              "pc": "0xbf9c86"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        },
+        {
+          "name": "s55sw919111-556677-b4fe473168e0",
+          "image": "firmware/S55/s55sw919111-556677-b4fe473168e0.bin",
+          "sha256": "b4fe473168e00284dca9950d53d3b4d74cb8e2d1094a61bfe4474fa8add74638",
+          "size": 12582912,
+          "model": "S55",
+          "langpack": 91,
+          "software_version": 91,
+          "t9_version": 11,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "w30-64mbit-top",
+              "size": 8388608
+            },
+            {
+              "role": "secondary",
+              "model": "m58lw064d",
+              "size": 4194304
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xbf9c86"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 202537,
+              "pc": "0xbf9c86"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        }
+      ]
+    },
+    "sl55": {
+      "name": "sl55sw070101-556677-7654d2052525",
+      "image": "firmware/SL55/sl55sw070101-556677-7654d2052525.bin",
+      "sha256": "7654d2052525274ca021e25080981ebf30f7b25863bfd0f3a833f17028860864",
+      "size": 12582912,
+      "model": "SL55",
+      "langpack": 1,
+      "software_version": 7,
+      "t9_version": 1,
+      "topology": [
+        {
+          "role": "primary",
+          "model": "w30-64mbit-top",
+          "size": 8388608
+        },
+        {
+          "role": "secondary",
+          "model": "m58lw064d",
+          "size": 4194304
+        }
+      ],
+      "identity": {
+        "kind": "fsn",
+        "value": "1234ABCD"
+      },
+      "no_sim": {
+        "minimum_ticks": 20000000
+      },
+      "sim": {
+        "minimum_ticks": 20000000
+      },
+      "validation": {
+        "cemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 100000,
+          "pc": "0xbfe624"
+        },
+        "qemu": {
+          "status": "bounded-smoke-passed",
+          "ticks": 245361,
+          "pc": "0xbfe626"
+        },
+        "boot_and_ui": "not-established-by-import-smoke"
+      },
+      "alternates": [
+        {
+          "name": "sl55sw200101-556677-99063cbabba8",
+          "image": "firmware/SL55/sl55sw200101-556677-99063cbabba8.bin",
+          "sha256": "99063cbabba8558eccbbc7ef066ccd5730102e38224359ecfae3b9dea5a5151c",
+          "size": 12582912,
+          "model": "SL55",
+          "langpack": 1,
+          "software_version": 20,
+          "t9_version": 1,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "w30-64mbit-top",
+              "size": 8388608
+            },
+            {
+              "role": "secondary",
+              "model": "m58lw064d",
+              "size": 4194304
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xbfe624"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 230094,
+              "pc": "0xbfe626"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        },
+        {
+          "name": "sl55sw209111-556677-6771954779e9",
+          "image": "firmware/SL55/sl55sw209111-556677-6771954779e9.bin",
+          "sha256": "6771954779e9e9df1b55b4c3bb365304ec1e7bf4b57c87d6c9f01f5e29880a93",
+          "size": 12582912,
+          "model": "SL55",
+          "langpack": 91,
+          "software_version": 20,
+          "t9_version": 11,
+          "topology": [
+            {
+              "role": "primary",
+              "model": "w30-64mbit-top",
+              "size": 8388608
+            },
+            {
+              "role": "secondary",
+              "model": "m58lw064d",
+              "size": 4194304
+            }
+          ],
+          "identity": {
+            "kind": "fsn",
+            "value": "1234ABCD"
+          },
+          "no_sim": {
+            "minimum_ticks": 20000000
+          },
+          "sim": {
+            "minimum_ticks": 20000000
+          },
+          "validation": {
+            "cemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 100000,
+              "pc": "0xbfe624"
+            },
+            "qemu": {
+              "status": "bounded-smoke-passed",
+              "ticks": 223749,
+              "pc": "0xbfe626"
+            },
+            "boot_and_ui": "not-established-by-import-smoke"
+          }
+        }
+      ]
+    }
+  }
+}
