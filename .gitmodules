@@ -1,0 +1,9 @@
+[submodule "emu/vendor/carquet"]
+	path = emu/vendor/carquet
+	url = https://github.com/Vitruves/carquet
+[submodule "qemu"]
+	path = qemu
+	url = https://github.com/danylokos/qemu-pmb7850.git
+[submodule "gdb"]
+	path = gdb
+	url = https://github.com/danylokos/gdb-pmb7850.git

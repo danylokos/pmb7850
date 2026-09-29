@@ -1,0 +1,896 @@
+{
+  "description": "Synthetic debugger-written state; no firmware, overlays, or handset claim. Integers are numeric; memory keys are physical addresses. Each ordinary stepi must retire exactly one instruction.",
+  "initial": {
+    "pc": 8192,
+    "cp": 64512,
+    "sp": 64512,
+    "stkov": 64000,
+    "stkun": 64512,
+    "psw": 0,
+    "syscon": 0,
+    "ext_kind": 0,
+    "ext_value": 0,
+    "ext_count": 0,
+    "extr": 0,
+    "guest_icount": 0,
+    "r0": 0,
+    "r1": 0,
+    "r2": 0,
+    "r3": 0,
+    "r4": 0,
+    "r5": 0,
+    "r6": 0,
+    "r7": 0,
+    "r8": 0,
+    "r9": 0,
+    "r10": 0,
+    "r11": 0,
+    "r12": 0,
+    "r13": 0,
+    "r14": 0,
+    "r15": 0
+  },
+  "cases": [
+    {
+      "name": "mixed-width-byte-write",
+      "manual": "M166 absolute PDF pp.82,83,90; C166S V1 pp.43-50,60,97",
+      "code": "cc00e6f03412e7f15a00",
+      "initial": {"r1": 43981},
+      "memory": {},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "r0": 4660}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "r0": 23092, "r1": 43981}, "memory": {}}
+      ]
+    },
+    {
+      "name": "branch-False",
+      "manual": "M166 absolute PDF pp.78; C166S V1 pp.43-50,60,97",
+      "code": "2d02",
+      "initial": {"psw": 0},
+      "memory": {},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "psw": 0}, "memory": {}}
+      ]
+    },
+    {
+      "name": "branch-True",
+      "manual": "M166 absolute PDF pp.78; C166S V1 pp.43-50,60,97",
+      "code": "2d02",
+      "initial": {"psw": 8},
+      "memory": {},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8198, "psw": 8}, "memory": {}}
+      ]
+    },
+    {
+      "name": "relative-backward",
+      "manual": "M166 absolute PDF pp.78; C166S V1 pp.43-50,60,97",
+      "code": "0dfe",
+      "initial": {},
+      "memory": {},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8190}, "memory": {}}
+      ]
+    },
+    {
+      "name": "segmented-jump",
+      "manual": "M166 absolute PDF pp.79; C166S V1 pp.43-50,60,97",
+      "code": "fa050030",
+      "initial": {},
+      "memory": {},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 339968, "csp": 5, "ip": 12288}, "memory": {}}
+      ]
+    },
+    {
+      "name": "calla",
+      "manual": "M166 absolute PDF pp.50,98; C166S V1 pp.43-50,60,97",
+      "code": "ca000030",
+      "initial": {},
+      "memory": {"0x3000": "cb00"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 12288, "sp": 64510}, "memory": {"0xfbfe": "0420"}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8196, "sp": 64512}, "memory": {}}
+      ]
+    },
+    {
+      "name": "calli",
+      "manual": "M166 absolute PDF pp.51,98; C166S V1 pp.43-50,60,97",
+      "code": "ab03",
+      "initial": {"r3": 12288},
+      "memory": {"0x3000": "cb00"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 12288, "sp": 64510}, "memory": {"0xfbfe": "0220"}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8194, "sp": 64512}, "memory": {}}
+      ]
+    },
+    {
+      "name": "callr",
+      "manual": "M166 absolute PDF pp.52,98; C166S V1 pp.43-50,60,97",
+      "code": "bb04",
+      "initial": {},
+      "memory": {"0x200a": "cb00"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8202, "sp": 64510}, "memory": {"0xfbfe": "0220"}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8194, "sp": 64512}, "memory": {}}
+      ]
+    },
+    {
+      "name": "calls",
+      "manual": "M166 absolute PDF pp.53,101; C166S V1 pp.43-50,60,97",
+      "code": "da050030",
+      "initial": {},
+      "memory": {"0x53000": "db00"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 339968, "sp": 64508}, "memory": {"0xfbfc": "04200000"}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8196, "sp": 64512}, "memory": {}}
+      ]
+    },
+    {
+      "name": "pcall",
+      "manual": "M166 absolute PDF pp.93,100; C166S V1 pp.43-50,60,97",
+      "code": "e2f10030",
+      "initial": {"r1": 32768},
+      "memory": {"0x3000": "ebf2"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 12288, "sp": 64508, "psw": 17}, "memory": {"0xfbfc": "04200080"}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8196, "sp": 64512, "r2": 32768, "psw": 17}, "memory": {}}
+      ]
+    },
+    {
+      "name": "atomic-short-1",
+      "manual": "M166 absolute PDF pp.39; C166S V1 pp.43-50,60,97",
+      "code": "d100cc00cc00",
+      "initial": {"r7": 5},
+      "memory": {},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 1, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8196, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8198, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}}
+      ]
+    },
+    {
+      "name": "atomic-short-2",
+      "manual": "M166 absolute PDF pp.39; C166S V1 pp.43-50,60,97",
+      "code": "d110cc00cc00cc00",
+      "initial": {"r7": 5},
+      "memory": {},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 2, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8196, "ext_count": 1, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8198, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8200, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}}
+      ]
+    },
+    {
+      "name": "atomic-short-3",
+      "manual": "M166 absolute PDF pp.39; C166S V1 pp.43-50,60,97",
+      "code": "d120cc00cc00cc00cc00",
+      "initial": {"r7": 5},
+      "memory": {},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 3, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8196, "ext_count": 2, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8198, "ext_count": 1, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8200, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8202, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}}
+      ]
+    },
+    {
+      "name": "atomic-short-4",
+      "manual": "M166 absolute PDF pp.39; C166S V1 pp.43-50,60,97",
+      "code": "d130cc00cc00cc00cc00cc00",
+      "initial": {"r7": 5},
+      "memory": {},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 4, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8196, "ext_count": 3, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8198, "ext_count": 2, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8200, "ext_count": 1, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8202, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 6, "pc": 8204, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extr-short-1",
+      "manual": "M166 absolute PDF pp.68; C166S V1 pp.43-50,60,97",
+      "code": "d180cc00cc00",
+      "initial": {"r7": 5},
+      "memory": {},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 1, "ext_kind": 0, "extr": 1, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8196, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8198, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extr-short-2",
+      "manual": "M166 absolute PDF pp.68; C166S V1 pp.43-50,60,97",
+      "code": "d190cc00cc00cc00",
+      "initial": {"r7": 5},
+      "memory": {},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 2, "ext_kind": 0, "extr": 1, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8196, "ext_count": 1, "ext_kind": 0, "extr": 1, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8198, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8200, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extr-short-3",
+      "manual": "M166 absolute PDF pp.68; C166S V1 pp.43-50,60,97",
+      "code": "d1a0cc00cc00cc00cc00",
+      "initial": {"r7": 5},
+      "memory": {},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 3, "ext_kind": 0, "extr": 1, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8196, "ext_count": 2, "ext_kind": 0, "extr": 1, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8198, "ext_count": 1, "ext_kind": 0, "extr": 1, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8200, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8202, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extr-short-4",
+      "manual": "M166 absolute PDF pp.68; C166S V1 pp.43-50,60,97",
+      "code": "d1b0cc00cc00cc00cc00cc00",
+      "initial": {"r7": 5},
+      "memory": {},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 4, "ext_kind": 0, "extr": 1, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8196, "ext_count": 3, "ext_kind": 0, "extr": 1, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8198, "ext_count": 2, "ext_kind": 0, "extr": 1, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8200, "ext_count": 1, "ext_kind": 0, "extr": 1, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8202, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 6, "pc": 8204, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 0}, "memory": {}}
+      ]
+    },
+    {
+      "name": "exts-immediate-1",
+      "manual": "M166 absolute PDF pp.71; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7000500f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 1, "ext_kind": 1, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "exts-immediate-2",
+      "manual": "M166 absolute PDF pp.71; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7100500f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 2, "ext_kind": 1, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 1, "ext_kind": 1, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8208, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "exts-immediate-3",
+      "manual": "M166 absolute PDF pp.71; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7200500f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 3, "ext_kind": 1, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 2, "ext_kind": 1, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 1, "ext_kind": 1, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8208, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8212, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "exts-immediate-4",
+      "manual": "M166 absolute PDF pp.71; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7300500f2f40001f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 4, "ext_kind": 1, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 3, "ext_kind": 1, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 2, "ext_kind": 1, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8208, "ext_count": 1, "ext_kind": 1, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8212, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 6, "pc": 8216, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "exts-register-1",
+      "manual": "M166 absolute PDF pp.71; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dc07f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 1, "ext_kind": 1, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "exts-register-2",
+      "manual": "M166 absolute PDF pp.71; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dc17f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 2, "ext_kind": 1, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 1, "ext_kind": 1, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8206, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "exts-register-3",
+      "manual": "M166 absolute PDF pp.71; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dc27f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 3, "ext_kind": 1, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 2, "ext_kind": 1, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 1, "ext_kind": 1, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8206, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8210, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "exts-register-4",
+      "manual": "M166 absolute PDF pp.71; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dc37f2f40001f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 4, "ext_kind": 1, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 3, "ext_kind": 1, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 2, "ext_kind": 1, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8206, "ext_count": 1, "ext_kind": 1, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8210, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 6, "pc": 8214, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extp-immediate-1",
+      "manual": "M166 absolute PDF pp.69; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7400500f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 1, "ext_kind": 2, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extp-immediate-2",
+      "manual": "M166 absolute PDF pp.69; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7500500f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 2, "ext_kind": 2, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 1, "ext_kind": 2, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8208, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extp-immediate-3",
+      "manual": "M166 absolute PDF pp.69; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7600500f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 3, "ext_kind": 2, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 2, "ext_kind": 2, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 1, "ext_kind": 2, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8208, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8212, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extp-immediate-4",
+      "manual": "M166 absolute PDF pp.69; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7700500f2f40001f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 4, "ext_kind": 2, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 3, "ext_kind": 2, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 2, "ext_kind": 2, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8208, "ext_count": 1, "ext_kind": 2, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8212, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 6, "pc": 8216, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extp-register-1",
+      "manual": "M166 absolute PDF pp.69; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dc47f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 1, "ext_kind": 2, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extp-register-2",
+      "manual": "M166 absolute PDF pp.69; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dc57f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 2, "ext_kind": 2, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 1, "ext_kind": 2, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8206, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extp-register-3",
+      "manual": "M166 absolute PDF pp.69; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dc67f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 3, "ext_kind": 2, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 2, "ext_kind": 2, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 1, "ext_kind": 2, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8206, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8210, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extp-register-4",
+      "manual": "M166 absolute PDF pp.69; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dc77f2f40001f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 4, "ext_kind": 2, "extr": 0, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 3, "ext_kind": 2, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 2, "ext_kind": 2, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8206, "ext_count": 1, "ext_kind": 2, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8210, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 6, "pc": 8214, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extsr-immediate-1",
+      "manual": "M166 absolute PDF pp.72; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7800500f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 1, "ext_kind": 1, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extsr-immediate-2",
+      "manual": "M166 absolute PDF pp.72; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7900500f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 2, "ext_kind": 1, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 1, "ext_kind": 1, "extr": 1, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8208, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extsr-immediate-3",
+      "manual": "M166 absolute PDF pp.72; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7a00500f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 3, "ext_kind": 1, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 2, "ext_kind": 1, "extr": 1, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 1, "ext_kind": 1, "extr": 1, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8208, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8212, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extsr-immediate-4",
+      "manual": "M166 absolute PDF pp.72; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7b00500f2f40001f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 4, "ext_kind": 1, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 3, "ext_kind": 1, "extr": 1, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 2, "ext_kind": 1, "extr": 1, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8208, "ext_count": 1, "ext_kind": 1, "extr": 1, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8212, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 6, "pc": 8216, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extsr-register-1",
+      "manual": "M166 absolute PDF pp.72; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dc87f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 1, "ext_kind": 1, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extsr-register-2",
+      "manual": "M166 absolute PDF pp.72; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dc97f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 2, "ext_kind": 1, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 1, "ext_kind": 1, "extr": 1, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8206, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extsr-register-3",
+      "manual": "M166 absolute PDF pp.72; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dca7f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 3, "ext_kind": 1, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 2, "ext_kind": 1, "extr": 1, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 1, "ext_kind": 1, "extr": 1, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8206, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8210, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extsr-register-4",
+      "manual": "M166 absolute PDF pp.72; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dcb7f2f40001f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 4, "ext_kind": 1, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 3, "ext_kind": 1, "extr": 1, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 2, "ext_kind": 1, "extr": 1, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8206, "ext_count": 1, "ext_kind": 1, "extr": 1, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8210, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 21845}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 6, "pc": 8214, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extpr-immediate-1",
+      "manual": "M166 absolute PDF pp.70; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7c00500f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 1, "ext_kind": 2, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extpr-immediate-2",
+      "manual": "M166 absolute PDF pp.70; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7d00500f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 2, "ext_kind": 2, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 1, "ext_kind": 2, "extr": 1, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8208, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extpr-immediate-3",
+      "manual": "M166 absolute PDF pp.70; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7e00500f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 3, "ext_kind": 2, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 2, "ext_kind": 2, "extr": 1, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 1, "ext_kind": 2, "extr": 1, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8208, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8212, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extpr-immediate-4",
+      "manual": "M166 absolute PDF pp.70; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "d7f00500f2f40001f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8196, "ext_count": 4, "ext_kind": 2, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8200, "ext_count": 3, "ext_kind": 2, "extr": 1, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8204, "ext_count": 2, "ext_kind": 2, "extr": 1, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8208, "ext_count": 1, "ext_kind": 2, "extr": 1, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8212, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 6, "pc": 8216, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extpr-register-1",
+      "manual": "M166 absolute PDF pp.70; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dcc7f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 1, "ext_kind": 2, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extpr-register-2",
+      "manual": "M166 absolute PDF pp.70; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dcd7f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 2, "ext_kind": 2, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 1, "ext_kind": 2, "extr": 1, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8206, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extpr-register-3",
+      "manual": "M166 absolute PDF pp.70; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dce7f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 3, "ext_kind": 2, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 2, "ext_kind": 2, "extr": 1, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 1, "ext_kind": 2, "extr": 1, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8206, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8210, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    },
+    {
+      "name": "extpr-register-4",
+      "manual": "M166 absolute PDF pp.70; C166S V1 pp.43-50,60,97; M166 PDF p.82",
+      "code": "dcf7f2f40001f2f40001f2f40001f2f40001f2f40001",
+      "initial": {"r7": 5},
+      "memory": {"0x100": "1111", "0x50100": "5555", "0x14100": "4444"},
+      "steps": [
+        {"command": "stepi", "registers": {"guest_icount": 1, "pc": 8194, "ext_count": 4, "ext_kind": 2, "extr": 1, "ext_value": 5}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 2, "pc": 8198, "ext_count": 3, "ext_kind": 2, "extr": 1, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 3, "pc": 8202, "ext_count": 2, "ext_kind": 2, "extr": 1, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 4, "pc": 8206, "ext_count": 1, "ext_kind": 2, "extr": 1, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 5, "pc": 8210, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 17476}, "memory": {}},
+        {"command": "stepi", "registers": {"guest_icount": 6, "pc": 8214, "ext_count": 0, "ext_kind": 0, "extr": 0, "ext_value": 5, "r4": 4369}, "memory": {}}
+      ]
+    }
+  ],
+  "breakpoint": {
+    "manual": "M166 absolute PDF pp.32,78; ADD r0,#1; JMPR cc_uc,-2",
+    "code": "08010dfe",
+    "effects": "At loop start after k loops: guest_icount=2*k, r0=k modulo 65536. A stepi from loop start increments r0 once and advances PC by 2.",
+    "actions": [
+      {
+        "command": "set breakpoint always-inserted on"
+      },
+      {
+        "command": "break *{base}",
+        "save": "b",
+        "snapshot": "installed"
+      },
+      {
+        "command": "continue",
+        "stop": {
+          "reason": "breakpoint-hit",
+          "offset": 0,
+          "breakpoint": "b"
+        },
+        "registers": {
+          "guest_icount": 0,
+          "r0": 0
+        }
+      },
+      {
+        "command": "continue",
+        "stop": {
+          "reason": "breakpoint-hit",
+          "offset": 0,
+          "breakpoint": "b"
+        },
+        "registers": {
+          "guest_icount": 2,
+          "r0": 1
+        }
+      },
+      {
+        "command": "stepi",
+        "stop": {
+          "reason": "end-stepping-range",
+          "offset": 2
+        },
+        "registers": {
+          "guest_icount": 3,
+          "r0": 2
+        }
+      },
+      {
+        "command": "continue",
+        "stop": {
+          "reason": "breakpoint-hit",
+          "offset": 0,
+          "breakpoint": "b"
+        },
+        "registers": {
+          "guest_icount": 4,
+          "r0": 2
+        }
+      },
+      {
+        "command": "disable {b}",
+        "snapshot": "disabled"
+      },
+      {
+        "command": "hbreak *{next}",
+        "save": "h",
+        "snapshot": "hardware-installed"
+      },
+      {
+        "command": "continue",
+        "stop": {
+          "reason": "breakpoint-hit",
+          "offset": 2,
+          "breakpoint": "h"
+        },
+        "registers": {
+          "guest_icount": 5,
+          "r0": 3
+        }
+      },
+      {
+        "command": "delete {h}"
+      },
+      {
+        "command": "enable {b}"
+      },
+      {
+        "command": "continue",
+        "stop": {
+          "reason": "breakpoint-hit",
+          "offset": 0,
+          "breakpoint": "b"
+        },
+        "registers": {
+          "guest_icount": 6,
+          "r0": 3
+        }
+      },
+      {
+        "command": "delete {b}"
+      },
+      {
+        "command": "tbreak *{next}",
+        "save": "t",
+        "snapshot": "temporary-installed"
+      },
+      {
+        "command": "continue",
+        "stop": {
+          "reason": "breakpoint-hit",
+          "offset": 2,
+          "breakpoint": "t"
+        },
+        "registers": {
+          "guest_icount": 7,
+          "r0": 4
+        },
+        "empty_breakpoints": true
+      },
+      {
+        "command": "break *{base} if $r0 == 6",
+        "save": "b",
+        "snapshot": "conditional-installed"
+      },
+      {
+        "command": "continue",
+        "stop": {
+          "reason": "breakpoint-hit",
+          "offset": 0,
+          "breakpoint": "b"
+        },
+        "registers": {
+          "guest_icount": 12,
+          "r0": 6
+        }
+      },
+      {
+        "command": "delete {b}",
+        "snapshot": "removed",
+        "empty_breakpoints": true
+      }
+    ]
+  },
+  "boundaries": [
+    {
+      "name": "next-page-nop",
+      "start": 8392688,
+      "stop": 8392720,
+      "guest_icount": 16
+    },
+    {
+      "name": "cross-page-mov",
+      "start": 8392688,
+      "stop": 8392706,
+      "guest_icount": 8,
+      "r0": 4660
+    }
+  ],
+  "interrupt": {
+    "manual": "M166 PDF p.99; C166S V1 PDF pp.54-60; cross-check test_soc.normal_interrupt",
+    "code": "cc00cc00",
+    "vector": 164,
+    "vector_code": "fb88",
+    "initial_psw": 2048,
+    "pending_adeic": 252,
+    "acknowledged_adeic": 124,
+    "step_pc": 8194,
+    "step_icount": 1,
+    "entry_sp": 64506,
+    "stack": "022000000008",
+    "return_pc": 8194,
+    "return_icount": 2
+  },
+  "timer": {
+    "manual": "C166S V1 PDF pp.419-421 (T3R and prescaler); PMB test sysclk=26MHz is emulator configuration",
+    "counter": 65090,
+    "control": 65346,
+    "control_value": 64,
+    "icount": "shift=10,align=off,sleep=off",
+    "steps": 8,
+    "continue_instructions": 64,
+    "expected_after_steps": [
+      3,
+      6,
+      9,
+      13,
+      16,
+      19,
+      22,
+      26
+    ],
+    "expected_after_continue": 234,
+    "unsampled_steps": 7,
+    "expected_unsampled": 22,
+    "policy": "Existing synthetic PMB wall-clock calibration: 26MHz, divisor 8, shift=10. Each synchronization truncates 26.624 source ticks to 26 at 1024ns; continuation dispatches every instruction with its 1000ns timer. This is emulator behavior, not a hardware timing claim. With no intermediate reads, overdue callbacks dispatch on the next resume before TCG applies NOTIMER; the final mapped read synchronizes the last interval."
+  },
+  "lifecycle": {
+    "manual": "M166 PDF pp.32,78; lifecycle stops are QEMU debugger policy",
+    "address": 8192,
+    "sentinel_register": "r5",
+    "sentinel": 42330,
+    "commands": [
+      "continue &",
+      "interrupt",
+      "continue &",
+      "detach",
+      "target remote <socket>",
+      "stepi &"
+    ],
+    "interrupt_reason": "signal-received",
+    "interrupt_signal": "SIGINT",
+    "invariant": "pc=base+2*(guest_icount%2); r0=ceil(guest_icount/2) modulo 65536; r5=A55A. Reconnect count > pre-detach count; final stepi count = reconnect count + 1."
+  }
+}

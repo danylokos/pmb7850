@@ -1,0 +1,9 @@
+pycryptodome==3.23.0
+PyYAML==6.0.3
+aiohttp==3.14.3
+websockets==16.1.1
+pyserial==3.5
+duckdb==1.5.5
+cmake==4.4.2
+setuptools==80.9.0
+wheel==0.45.1

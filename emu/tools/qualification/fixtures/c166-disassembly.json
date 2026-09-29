@@ -1,0 +1,3869 @@
+{
+  "authority": "M166 v1.2 per-instruction Format/Bytes; C166S V1 v1.6 PDF pp.43-44,49-50,82-89. Addresses and lengths are bytes; xx immediate padding is unspecified.",
+  "cases": [
+    {
+      "bytes": "0012",
+      "address": 9216,
+      "text": "add r1,r2",
+      "length": 2,
+      "manual": "M166 PDF p.32"
+    },
+    {
+      "bytes": "02f13492",
+      "address": 9216,
+      "text": "add r1,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.32"
+    },
+    {
+      "bytes": "04f13492",
+      "address": 9216,
+      "text": "add 0x9234,r1",
+      "length": 4,
+      "manual": "M166 PDF p.32"
+    },
+    {
+      "bytes": "06f15a89",
+      "address": 9216,
+      "text": "add r1,#0x895a",
+      "length": 4,
+      "manual": "M166 PDF p.32"
+    },
+    {
+      "bytes": "0817",
+      "address": 9216,
+      "text": "add r1,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.32"
+    },
+    {
+      "bytes": "081b",
+      "address": 9216,
+      "text": "add r1,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.32"
+    },
+    {
+      "bytes": "081e",
+      "address": 9216,
+      "text": "add r1,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.32"
+    },
+    {
+      "bytes": "0112",
+      "address": 9216,
+      "text": "addb rh0,rl1",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "03f13492",
+      "address": 9216,
+      "text": "addb rh0,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "05f13492",
+      "address": 9216,
+      "text": "addb 0x9234,rh0",
+      "length": 4,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "07f15a89",
+      "address": 9216,
+      "text": "addb rh0,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "0917",
+      "address": 9216,
+      "text": "addb rh0,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "091b",
+      "address": 9216,
+      "text": "addb rh0,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "091e",
+      "address": 9216,
+      "text": "addb rh0,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "1012",
+      "address": 9216,
+      "text": "addc r1,r2",
+      "length": 2,
+      "manual": "M166 PDF p.34"
+    },
+    {
+      "bytes": "12f13492",
+      "address": 9216,
+      "text": "addc r1,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.34"
+    },
+    {
+      "bytes": "14f13492",
+      "address": 9216,
+      "text": "addc 0x9234,r1",
+      "length": 4,
+      "manual": "M166 PDF p.34"
+    },
+    {
+      "bytes": "16f15a89",
+      "address": 9216,
+      "text": "addc r1,#0x895a",
+      "length": 4,
+      "manual": "M166 PDF p.34"
+    },
+    {
+      "bytes": "1817",
+      "address": 9216,
+      "text": "addc r1,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.34"
+    },
+    {
+      "bytes": "181b",
+      "address": 9216,
+      "text": "addc r1,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.34"
+    },
+    {
+      "bytes": "181e",
+      "address": 9216,
+      "text": "addc r1,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.34"
+    },
+    {
+      "bytes": "1112",
+      "address": 9216,
+      "text": "addcb rh0,rl1",
+      "length": 2,
+      "manual": "M166 PDF p.35"
+    },
+    {
+      "bytes": "13f13492",
+      "address": 9216,
+      "text": "addcb rh0,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.35"
+    },
+    {
+      "bytes": "15f13492",
+      "address": 9216,
+      "text": "addcb 0x9234,rh0",
+      "length": 4,
+      "manual": "M166 PDF p.35"
+    },
+    {
+      "bytes": "17f15a89",
+      "address": 9216,
+      "text": "addcb rh0,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.35"
+    },
+    {
+      "bytes": "1917",
+      "address": 9216,
+      "text": "addcb rh0,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.35"
+    },
+    {
+      "bytes": "191b",
+      "address": 9216,
+      "text": "addcb rh0,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.35"
+    },
+    {
+      "bytes": "191e",
+      "address": 9216,
+      "text": "addcb rh0,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.35"
+    },
+    {
+      "bytes": "2012",
+      "address": 9216,
+      "text": "sub r1,r2",
+      "length": 2,
+      "manual": "M166 PDF p.109"
+    },
+    {
+      "bytes": "22f13492",
+      "address": 9216,
+      "text": "sub r1,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.109"
+    },
+    {
+      "bytes": "24f13492",
+      "address": 9216,
+      "text": "sub 0x9234,r1",
+      "length": 4,
+      "manual": "M166 PDF p.109"
+    },
+    {
+      "bytes": "26f15a89",
+      "address": 9216,
+      "text": "sub r1,#0x895a",
+      "length": 4,
+      "manual": "M166 PDF p.109"
+    },
+    {
+      "bytes": "2817",
+      "address": 9216,
+      "text": "sub r1,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.109"
+    },
+    {
+      "bytes": "281b",
+      "address": 9216,
+      "text": "sub r1,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.109"
+    },
+    {
+      "bytes": "281e",
+      "address": 9216,
+      "text": "sub r1,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.109"
+    },
+    {
+      "bytes": "2112",
+      "address": 9216,
+      "text": "subb rh0,rl1",
+      "length": 2,
+      "manual": "M166 PDF p.110"
+    },
+    {
+      "bytes": "23f13492",
+      "address": 9216,
+      "text": "subb rh0,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.110"
+    },
+    {
+      "bytes": "25f13492",
+      "address": 9216,
+      "text": "subb 0x9234,rh0",
+      "length": 4,
+      "manual": "M166 PDF p.110"
+    },
+    {
+      "bytes": "27f15a89",
+      "address": 9216,
+      "text": "subb rh0,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.110"
+    },
+    {
+      "bytes": "2917",
+      "address": 9216,
+      "text": "subb rh0,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.110"
+    },
+    {
+      "bytes": "291b",
+      "address": 9216,
+      "text": "subb rh0,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.110"
+    },
+    {
+      "bytes": "291e",
+      "address": 9216,
+      "text": "subb rh0,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.110"
+    },
+    {
+      "bytes": "3012",
+      "address": 9216,
+      "text": "subc r1,r2",
+      "length": 2,
+      "manual": "M166 PDF p.111"
+    },
+    {
+      "bytes": "32f13492",
+      "address": 9216,
+      "text": "subc r1,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.111"
+    },
+    {
+      "bytes": "34f13492",
+      "address": 9216,
+      "text": "subc 0x9234,r1",
+      "length": 4,
+      "manual": "M166 PDF p.111"
+    },
+    {
+      "bytes": "36f15a89",
+      "address": 9216,
+      "text": "subc r1,#0x895a",
+      "length": 4,
+      "manual": "M166 PDF p.111"
+    },
+    {
+      "bytes": "3817",
+      "address": 9216,
+      "text": "subc r1,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.111"
+    },
+    {
+      "bytes": "381b",
+      "address": 9216,
+      "text": "subc r1,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.111"
+    },
+    {
+      "bytes": "381e",
+      "address": 9216,
+      "text": "subc r1,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.111"
+    },
+    {
+      "bytes": "3112",
+      "address": 9216,
+      "text": "subcb rh0,rl1",
+      "length": 2,
+      "manual": "M166 PDF p.112"
+    },
+    {
+      "bytes": "33f13492",
+      "address": 9216,
+      "text": "subcb rh0,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.112"
+    },
+    {
+      "bytes": "35f13492",
+      "address": 9216,
+      "text": "subcb 0x9234,rh0",
+      "length": 4,
+      "manual": "M166 PDF p.112"
+    },
+    {
+      "bytes": "37f15a89",
+      "address": 9216,
+      "text": "subcb rh0,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.112"
+    },
+    {
+      "bytes": "3917",
+      "address": 9216,
+      "text": "subcb rh0,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.112"
+    },
+    {
+      "bytes": "391b",
+      "address": 9216,
+      "text": "subcb rh0,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.112"
+    },
+    {
+      "bytes": "391e",
+      "address": 9216,
+      "text": "subcb rh0,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.112"
+    },
+    {
+      "bytes": "4012",
+      "address": 9216,
+      "text": "cmp r1,r2",
+      "length": 2,
+      "manual": "M166 PDF p.54"
+    },
+    {
+      "bytes": "42f13492",
+      "address": 9216,
+      "text": "cmp r1,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.54"
+    },
+    {
+      "bytes": "46f15a89",
+      "address": 9216,
+      "text": "cmp r1,#0x895a",
+      "length": 4,
+      "manual": "M166 PDF p.54"
+    },
+    {
+      "bytes": "4817",
+      "address": 9216,
+      "text": "cmp r1,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.54"
+    },
+    {
+      "bytes": "481b",
+      "address": 9216,
+      "text": "cmp r1,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.54"
+    },
+    {
+      "bytes": "481e",
+      "address": 9216,
+      "text": "cmp r1,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.54"
+    },
+    {
+      "bytes": "4112",
+      "address": 9216,
+      "text": "cmpb rh0,rl1",
+      "length": 2,
+      "manual": "M166 PDF p.55"
+    },
+    {
+      "bytes": "43f13492",
+      "address": 9216,
+      "text": "cmpb rh0,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.55"
+    },
+    {
+      "bytes": "47f15a89",
+      "address": 9216,
+      "text": "cmpb rh0,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.55"
+    },
+    {
+      "bytes": "4917",
+      "address": 9216,
+      "text": "cmpb rh0,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.55"
+    },
+    {
+      "bytes": "491b",
+      "address": 9216,
+      "text": "cmpb rh0,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.55"
+    },
+    {
+      "bytes": "491e",
+      "address": 9216,
+      "text": "cmpb rh0,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.55"
+    },
+    {
+      "bytes": "5012",
+      "address": 9216,
+      "text": "xor r1,r2",
+      "length": 2,
+      "manual": "M166 PDF p.114"
+    },
+    {
+      "bytes": "52f13492",
+      "address": 9216,
+      "text": "xor r1,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.114"
+    },
+    {
+      "bytes": "54f13492",
+      "address": 9216,
+      "text": "xor 0x9234,r1",
+      "length": 4,
+      "manual": "M166 PDF p.114"
+    },
+    {
+      "bytes": "56f15a89",
+      "address": 9216,
+      "text": "xor r1,#0x895a",
+      "length": 4,
+      "manual": "M166 PDF p.114"
+    },
+    {
+      "bytes": "5817",
+      "address": 9216,
+      "text": "xor r1,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.114"
+    },
+    {
+      "bytes": "581b",
+      "address": 9216,
+      "text": "xor r1,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.114"
+    },
+    {
+      "bytes": "581e",
+      "address": 9216,
+      "text": "xor r1,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.114"
+    },
+    {
+      "bytes": "5112",
+      "address": 9216,
+      "text": "xorb rh0,rl1",
+      "length": 2,
+      "manual": "M166 PDF p.115"
+    },
+    {
+      "bytes": "53f13492",
+      "address": 9216,
+      "text": "xorb rh0,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.115"
+    },
+    {
+      "bytes": "55f13492",
+      "address": 9216,
+      "text": "xorb 0x9234,rh0",
+      "length": 4,
+      "manual": "M166 PDF p.115"
+    },
+    {
+      "bytes": "57f15a89",
+      "address": 9216,
+      "text": "xorb rh0,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.115"
+    },
+    {
+      "bytes": "5917",
+      "address": 9216,
+      "text": "xorb rh0,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.115"
+    },
+    {
+      "bytes": "591b",
+      "address": 9216,
+      "text": "xorb rh0,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.115"
+    },
+    {
+      "bytes": "591e",
+      "address": 9216,
+      "text": "xorb rh0,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.115"
+    },
+    {
+      "bytes": "6012",
+      "address": 9216,
+      "text": "and r1,r2",
+      "length": 2,
+      "manual": "M166 PDF p.36"
+    },
+    {
+      "bytes": "62f13492",
+      "address": 9216,
+      "text": "and r1,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.36"
+    },
+    {
+      "bytes": "64f13492",
+      "address": 9216,
+      "text": "and 0x9234,r1",
+      "length": 4,
+      "manual": "M166 PDF p.36"
+    },
+    {
+      "bytes": "66f15a89",
+      "address": 9216,
+      "text": "and r1,#0x895a",
+      "length": 4,
+      "manual": "M166 PDF p.36"
+    },
+    {
+      "bytes": "6817",
+      "address": 9216,
+      "text": "and r1,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.36"
+    },
+    {
+      "bytes": "681b",
+      "address": 9216,
+      "text": "and r1,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.36"
+    },
+    {
+      "bytes": "681e",
+      "address": 9216,
+      "text": "and r1,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.36"
+    },
+    {
+      "bytes": "6112",
+      "address": 9216,
+      "text": "andb rh0,rl1",
+      "length": 2,
+      "manual": "M166 PDF p.37"
+    },
+    {
+      "bytes": "63f13492",
+      "address": 9216,
+      "text": "andb rh0,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.37"
+    },
+    {
+      "bytes": "65f13492",
+      "address": 9216,
+      "text": "andb 0x9234,rh0",
+      "length": 4,
+      "manual": "M166 PDF p.37"
+    },
+    {
+      "bytes": "67f15a89",
+      "address": 9216,
+      "text": "andb rh0,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.37"
+    },
+    {
+      "bytes": "6917",
+      "address": 9216,
+      "text": "andb rh0,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.37"
+    },
+    {
+      "bytes": "691b",
+      "address": 9216,
+      "text": "andb rh0,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.37"
+    },
+    {
+      "bytes": "691e",
+      "address": 9216,
+      "text": "andb rh0,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.37"
+    },
+    {
+      "bytes": "7012",
+      "address": 9216,
+      "text": "or r1,r2",
+      "length": 2,
+      "manual": "M166 PDF p.91"
+    },
+    {
+      "bytes": "72f13492",
+      "address": 9216,
+      "text": "or r1,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.91"
+    },
+    {
+      "bytes": "74f13492",
+      "address": 9216,
+      "text": "or 0x9234,r1",
+      "length": 4,
+      "manual": "M166 PDF p.91"
+    },
+    {
+      "bytes": "76f15a89",
+      "address": 9216,
+      "text": "or r1,#0x895a",
+      "length": 4,
+      "manual": "M166 PDF p.91"
+    },
+    {
+      "bytes": "7817",
+      "address": 9216,
+      "text": "or r1,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.91"
+    },
+    {
+      "bytes": "781b",
+      "address": 9216,
+      "text": "or r1,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.91"
+    },
+    {
+      "bytes": "781e",
+      "address": 9216,
+      "text": "or r1,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.91"
+    },
+    {
+      "bytes": "7112",
+      "address": 9216,
+      "text": "orb rh0,rl1",
+      "length": 2,
+      "manual": "M166 PDF p.92"
+    },
+    {
+      "bytes": "73f13492",
+      "address": 9216,
+      "text": "orb rh0,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.92"
+    },
+    {
+      "bytes": "75f13492",
+      "address": 9216,
+      "text": "orb 0x9234,rh0",
+      "length": 4,
+      "manual": "M166 PDF p.92"
+    },
+    {
+      "bytes": "77f15a89",
+      "address": 9216,
+      "text": "orb rh0,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.92"
+    },
+    {
+      "bytes": "7917",
+      "address": 9216,
+      "text": "orb rh0,#0x7",
+      "length": 2,
+      "manual": "M166 PDF p.92"
+    },
+    {
+      "bytes": "791b",
+      "address": 9216,
+      "text": "orb rh0,[r3]",
+      "length": 2,
+      "manual": "M166 PDF p.92"
+    },
+    {
+      "bytes": "791e",
+      "address": 9216,
+      "text": "orb rh0,[r2+]",
+      "length": 2,
+      "manual": "M166 PDF p.92"
+    },
+    {
+      "bytes": "e0a1",
+      "address": 9216,
+      "text": "mov r1,#0xa",
+      "length": 2,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "f012",
+      "address": 9216,
+      "text": "mov r1,r2",
+      "length": 2,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "e6f15a12",
+      "address": 9216,
+      "text": "mov r1,#0x125a",
+      "length": 4,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "f2f13492",
+      "address": 9216,
+      "text": "mov r1,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "f6f13492",
+      "address": 9216,
+      "text": "mov 0x9234,r1",
+      "length": 4,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "a81f",
+      "address": 9216,
+      "text": "mov r1,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "981f",
+      "address": 9216,
+      "text": "mov r1,[r15+]",
+      "length": 2,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "b81f",
+      "address": 9216,
+      "text": "mov [r15],r1",
+      "length": 2,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "881f",
+      "address": 9216,
+      "text": "mov [-r15],r1",
+      "length": 2,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "c81f",
+      "address": 9216,
+      "text": "mov [r1],[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "d81f",
+      "address": 9216,
+      "text": "mov [r1+],[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "e81f",
+      "address": 9216,
+      "text": "mov [r1],[r15+]",
+      "length": 2,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "c41f3412",
+      "address": 9216,
+      "text": "mov [r15+#0x1234],r1",
+      "length": 4,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "d41f3412",
+      "address": 9216,
+      "text": "mov r1,[r15+#0x1234]",
+      "length": 4,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "840f3492",
+      "address": 9216,
+      "text": "mov [r15],0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "940f3492",
+      "address": 9216,
+      "text": "mov 0x9234,[r15]",
+      "length": 4,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "e1a1",
+      "address": 9216,
+      "text": "movb rh0,#0xa",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f112",
+      "address": 9216,
+      "text": "movb rh0,rl1",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "e7f15a12",
+      "address": 9216,
+      "text": "movb rh0,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f3f13492",
+      "address": 9216,
+      "text": "movb rh0,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f7f13492",
+      "address": 9216,
+      "text": "movb 0x9234,rh0",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "a91f",
+      "address": 9216,
+      "text": "movb rh0,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "991f",
+      "address": 9216,
+      "text": "movb rh0,[r15+]",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "b91f",
+      "address": 9216,
+      "text": "movb [r15],rh0",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "891f",
+      "address": 9216,
+      "text": "movb [-r15],rh0",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "c91f",
+      "address": 9216,
+      "text": "movb [r1],[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "d91f",
+      "address": 9216,
+      "text": "movb [r1+],[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "e91f",
+      "address": 9216,
+      "text": "movb [r1],[r15+]",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "e41f3412",
+      "address": 9216,
+      "text": "movb [r15+#0x1234],rh0",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f41f3412",
+      "address": 9216,
+      "text": "movb rh0,[r15+#0x1234]",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "a40f3492",
+      "address": 9216,
+      "text": "movb [r15],0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "b40f3492",
+      "address": 9216,
+      "text": "movb 0x9234,[r15]",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "c01f",
+      "address": 9216,
+      "text": "movbz r15,rh0",
+      "length": 2,
+      "manual": "M166 PDF p.85"
+    },
+    {
+      "bytes": "c2f13492",
+      "address": 9216,
+      "text": "movbz r1,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.85"
+    },
+    {
+      "bytes": "c5f13492",
+      "address": 9216,
+      "text": "movbz 0x9234,rh0",
+      "length": 4,
+      "manual": "M166 PDF p.85"
+    },
+    {
+      "bytes": "d01f",
+      "address": 9216,
+      "text": "movbs r15,rh0",
+      "length": 2,
+      "manual": "M166 PDF p.84"
+    },
+    {
+      "bytes": "d2f13492",
+      "address": 9216,
+      "text": "movbs r1,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.84"
+    },
+    {
+      "bytes": "d5f13492",
+      "address": 9216,
+      "text": "movbs 0x9234,rh0",
+      "length": 4,
+      "manual": "M166 PDF p.84"
+    },
+    {
+      "bytes": "81f0",
+      "address": 9216,
+      "text": "neg r15",
+      "length": 2,
+      "manual": "M166 PDF p.88"
+    },
+    {
+      "bytes": "91f0",
+      "address": 9216,
+      "text": "cpl r15",
+      "length": 2,
+      "manual": "M166 PDF p.60"
+    },
+    {
+      "bytes": "a1f0",
+      "address": 9216,
+      "text": "negb rh7",
+      "length": 2,
+      "manual": "M166 PDF p.89"
+    },
+    {
+      "bytes": "b1f0",
+      "address": 9216,
+      "text": "cplb rh7",
+      "length": 2,
+      "manual": "M166 PDF p.61"
+    },
+    {
+      "bytes": "0c1f",
+      "address": 9216,
+      "text": "rol r1,r15",
+      "length": 2,
+      "manual": "M166 PDF p.102"
+    },
+    {
+      "bytes": "1cf1",
+      "address": 9216,
+      "text": "rol r1,#15",
+      "length": 2,
+      "manual": "M166 PDF p.102"
+    },
+    {
+      "bytes": "2c1f",
+      "address": 9216,
+      "text": "ror r1,r15",
+      "length": 2,
+      "manual": "M166 PDF p.103"
+    },
+    {
+      "bytes": "3cf1",
+      "address": 9216,
+      "text": "ror r1,#15",
+      "length": 2,
+      "manual": "M166 PDF p.103"
+    },
+    {
+      "bytes": "4c1f",
+      "address": 9216,
+      "text": "shl r1,r15",
+      "length": 2,
+      "manual": "M166 PDF p.105"
+    },
+    {
+      "bytes": "5cf1",
+      "address": 9216,
+      "text": "shl r1,#15",
+      "length": 2,
+      "manual": "M166 PDF p.105"
+    },
+    {
+      "bytes": "6c1f",
+      "address": 9216,
+      "text": "shr r1,r15",
+      "length": 2,
+      "manual": "M166 PDF p.106"
+    },
+    {
+      "bytes": "7cf1",
+      "address": 9216,
+      "text": "shr r1,#15",
+      "length": 2,
+      "manual": "M166 PDF p.106"
+    },
+    {
+      "bytes": "ac1f",
+      "address": 9216,
+      "text": "ashr r1,r15",
+      "length": 2,
+      "manual": "M166 PDF p.38"
+    },
+    {
+      "bytes": "bcf1",
+      "address": 9216,
+      "text": "ashr r1,#15",
+      "length": 2,
+      "manual": "M166 PDF p.38"
+    },
+    {
+      "bytes": "80f1",
+      "address": 9216,
+      "text": "cmpi1 r1,#0xf",
+      "length": 2,
+      "manual": "M166 PDF p.58"
+    },
+    {
+      "bytes": "82f13492",
+      "address": 9216,
+      "text": "cmpi1 r1,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.58"
+    },
+    {
+      "bytes": "86f13492",
+      "address": 9216,
+      "text": "cmpi1 r1,#0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.58"
+    },
+    {
+      "bytes": "90f1",
+      "address": 9216,
+      "text": "cmpi2 r1,#0xf",
+      "length": 2,
+      "manual": "M166 PDF p.59"
+    },
+    {
+      "bytes": "92f13492",
+      "address": 9216,
+      "text": "cmpi2 r1,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.59"
+    },
+    {
+      "bytes": "96f13492",
+      "address": 9216,
+      "text": "cmpi2 r1,#0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.59"
+    },
+    {
+      "bytes": "a0f1",
+      "address": 9216,
+      "text": "cmpd1 r1,#0xf",
+      "length": 2,
+      "manual": "M166 PDF p.56"
+    },
+    {
+      "bytes": "a2f13492",
+      "address": 9216,
+      "text": "cmpd1 r1,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.56"
+    },
+    {
+      "bytes": "a6f13492",
+      "address": 9216,
+      "text": "cmpd1 r1,#0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.56"
+    },
+    {
+      "bytes": "b0f1",
+      "address": 9216,
+      "text": "cmpd2 r1,#0xf",
+      "length": 2,
+      "manual": "M166 PDF p.57"
+    },
+    {
+      "bytes": "b2f13492",
+      "address": 9216,
+      "text": "cmpd2 r1,0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.57"
+    },
+    {
+      "bytes": "b6f13492",
+      "address": 9216,
+      "text": "cmpd2 r1,#0x9234",
+      "length": 4,
+      "manual": "M166 PDF p.57"
+    },
+    {
+      "bytes": "0e88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).0",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "0ff1",
+      "address": 9216,
+      "text": "bset r1.0",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "0d00",
+      "address": 11272190,
+      "text": "jmpr cc_uc,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "0d7f",
+      "address": 11272190,
+      "text": "jmpr cc_uc,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "0d80",
+      "address": 11272190,
+      "text": "jmpr cc_uc,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "0dff",
+      "address": 11272190,
+      "text": "jmpr cc_uc,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ea003412",
+      "address": 11215872,
+      "text": "jmpa cc_uc,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "ca003412",
+      "address": 11215872,
+      "text": "calla cc_uc,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9c0f",
+      "address": 9216,
+      "text": "jmpi cc_uc,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "ab0f",
+      "address": 9216,
+      "text": "calli cc_uc,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "1e88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).1",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "1ff1",
+      "address": 9216,
+      "text": "bset r1.1",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "1d00",
+      "address": 11272190,
+      "text": "jmpr cc_net,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "1d7f",
+      "address": 11272190,
+      "text": "jmpr cc_net,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "1d80",
+      "address": 11272190,
+      "text": "jmpr cc_net,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "1dff",
+      "address": 11272190,
+      "text": "jmpr cc_net,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ea103412",
+      "address": 11215872,
+      "text": "jmpa cc_net,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "ca103412",
+      "address": 11215872,
+      "text": "calla cc_net,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9c1f",
+      "address": 9216,
+      "text": "jmpi cc_net,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "ab1f",
+      "address": 9216,
+      "text": "calli cc_net,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "2e88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).2",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "2ff1",
+      "address": 9216,
+      "text": "bset r1.2",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "2d00",
+      "address": 11272190,
+      "text": "jmpr cc_eq,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "2d7f",
+      "address": 11272190,
+      "text": "jmpr cc_eq,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "2d80",
+      "address": 11272190,
+      "text": "jmpr cc_eq,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "2dff",
+      "address": 11272190,
+      "text": "jmpr cc_eq,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ea203412",
+      "address": 11215872,
+      "text": "jmpa cc_eq,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "ca203412",
+      "address": 11215872,
+      "text": "calla cc_eq,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9c2f",
+      "address": 9216,
+      "text": "jmpi cc_eq,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "ab2f",
+      "address": 9216,
+      "text": "calli cc_eq,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "3e88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).3",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "3ff1",
+      "address": 9216,
+      "text": "bset r1.3",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "3d00",
+      "address": 11272190,
+      "text": "jmpr cc_ne,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "3d7f",
+      "address": 11272190,
+      "text": "jmpr cc_ne,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "3d80",
+      "address": 11272190,
+      "text": "jmpr cc_ne,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "3dff",
+      "address": 11272190,
+      "text": "jmpr cc_ne,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ea303412",
+      "address": 11215872,
+      "text": "jmpa cc_ne,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "ca303412",
+      "address": 11215872,
+      "text": "calla cc_ne,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9c3f",
+      "address": 9216,
+      "text": "jmpi cc_ne,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "ab3f",
+      "address": 9216,
+      "text": "calli cc_ne,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "4e88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).4",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "4ff1",
+      "address": 9216,
+      "text": "bset r1.4",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "4d00",
+      "address": 11272190,
+      "text": "jmpr cc_v,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "4d7f",
+      "address": 11272190,
+      "text": "jmpr cc_v,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "4d80",
+      "address": 11272190,
+      "text": "jmpr cc_v,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "4dff",
+      "address": 11272190,
+      "text": "jmpr cc_v,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ea403412",
+      "address": 11215872,
+      "text": "jmpa cc_v,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "ca403412",
+      "address": 11215872,
+      "text": "calla cc_v,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9c4f",
+      "address": 9216,
+      "text": "jmpi cc_v,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "ab4f",
+      "address": 9216,
+      "text": "calli cc_v,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "5e88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).5",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "5ff1",
+      "address": 9216,
+      "text": "bset r1.5",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "5d00",
+      "address": 11272190,
+      "text": "jmpr cc_nv,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "5d7f",
+      "address": 11272190,
+      "text": "jmpr cc_nv,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "5d80",
+      "address": 11272190,
+      "text": "jmpr cc_nv,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "5dff",
+      "address": 11272190,
+      "text": "jmpr cc_nv,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ea503412",
+      "address": 11215872,
+      "text": "jmpa cc_nv,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "ca503412",
+      "address": 11215872,
+      "text": "calla cc_nv,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9c5f",
+      "address": 9216,
+      "text": "jmpi cc_nv,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "ab5f",
+      "address": 9216,
+      "text": "calli cc_nv,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "6e88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).6",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "6ff1",
+      "address": 9216,
+      "text": "bset r1.6",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "6d00",
+      "address": 11272190,
+      "text": "jmpr cc_n,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "6d7f",
+      "address": 11272190,
+      "text": "jmpr cc_n,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "6d80",
+      "address": 11272190,
+      "text": "jmpr cc_n,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "6dff",
+      "address": 11272190,
+      "text": "jmpr cc_n,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ea603412",
+      "address": 11215872,
+      "text": "jmpa cc_n,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "ca603412",
+      "address": 11215872,
+      "text": "calla cc_n,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9c6f",
+      "address": 9216,
+      "text": "jmpi cc_n,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "ab6f",
+      "address": 9216,
+      "text": "calli cc_n,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "7e88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).7",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "7ff1",
+      "address": 9216,
+      "text": "bset r1.7",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "7d00",
+      "address": 11272190,
+      "text": "jmpr cc_nn,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "7d7f",
+      "address": 11272190,
+      "text": "jmpr cc_nn,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "7d80",
+      "address": 11272190,
+      "text": "jmpr cc_nn,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "7dff",
+      "address": 11272190,
+      "text": "jmpr cc_nn,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ea703412",
+      "address": 11215872,
+      "text": "jmpa cc_nn,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "ca703412",
+      "address": 11215872,
+      "text": "calla cc_nn,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9c7f",
+      "address": 9216,
+      "text": "jmpi cc_nn,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "ab7f",
+      "address": 9216,
+      "text": "calli cc_nn,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "8e88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).8",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "8ff1",
+      "address": 9216,
+      "text": "bset r1.8",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "8d00",
+      "address": 11272190,
+      "text": "jmpr cc_c,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "8d7f",
+      "address": 11272190,
+      "text": "jmpr cc_c,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "8d80",
+      "address": 11272190,
+      "text": "jmpr cc_c,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "8dff",
+      "address": 11272190,
+      "text": "jmpr cc_c,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ea803412",
+      "address": 11215872,
+      "text": "jmpa cc_c,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "ca803412",
+      "address": 11215872,
+      "text": "calla cc_c,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9c8f",
+      "address": 9216,
+      "text": "jmpi cc_c,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "ab8f",
+      "address": 9216,
+      "text": "calli cc_c,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "9e88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).9",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "9ff1",
+      "address": 9216,
+      "text": "bset r1.9",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "9d00",
+      "address": 11272190,
+      "text": "jmpr cc_nc,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "9d7f",
+      "address": 11272190,
+      "text": "jmpr cc_nc,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "9d80",
+      "address": 11272190,
+      "text": "jmpr cc_nc,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "9dff",
+      "address": 11272190,
+      "text": "jmpr cc_nc,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ea903412",
+      "address": 11215872,
+      "text": "jmpa cc_nc,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "ca903412",
+      "address": 11215872,
+      "text": "calla cc_nc,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9c9f",
+      "address": 9216,
+      "text": "jmpi cc_nc,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "ab9f",
+      "address": 9216,
+      "text": "calli cc_nc,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "ae88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).10",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "aff1",
+      "address": 9216,
+      "text": "bset r1.10",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "ad00",
+      "address": 11272190,
+      "text": "jmpr cc_sgt,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ad7f",
+      "address": 11272190,
+      "text": "jmpr cc_sgt,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ad80",
+      "address": 11272190,
+      "text": "jmpr cc_sgt,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "adff",
+      "address": 11272190,
+      "text": "jmpr cc_sgt,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "eaa03412",
+      "address": 11215872,
+      "text": "jmpa cc_sgt,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "caa03412",
+      "address": 11215872,
+      "text": "calla cc_sgt,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9caf",
+      "address": 9216,
+      "text": "jmpi cc_sgt,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "abaf",
+      "address": 9216,
+      "text": "calli cc_sgt,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "be88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).11",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "bff1",
+      "address": 9216,
+      "text": "bset r1.11",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "bd00",
+      "address": 11272190,
+      "text": "jmpr cc_sle,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "bd7f",
+      "address": 11272190,
+      "text": "jmpr cc_sle,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "bd80",
+      "address": 11272190,
+      "text": "jmpr cc_sle,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "bdff",
+      "address": 11272190,
+      "text": "jmpr cc_sle,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "eab03412",
+      "address": 11215872,
+      "text": "jmpa cc_sle,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "cab03412",
+      "address": 11215872,
+      "text": "calla cc_sle,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9cbf",
+      "address": 9216,
+      "text": "jmpi cc_sle,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "abbf",
+      "address": 9216,
+      "text": "calli cc_sle,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "ce88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).12",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "cff1",
+      "address": 9216,
+      "text": "bset r1.12",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "cd00",
+      "address": 11272190,
+      "text": "jmpr cc_slt,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "cd7f",
+      "address": 11272190,
+      "text": "jmpr cc_slt,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "cd80",
+      "address": 11272190,
+      "text": "jmpr cc_slt,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "cdff",
+      "address": 11272190,
+      "text": "jmpr cc_slt,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "eac03412",
+      "address": 11215872,
+      "text": "jmpa cc_slt,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "cac03412",
+      "address": 11215872,
+      "text": "calla cc_slt,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9ccf",
+      "address": 9216,
+      "text": "jmpi cc_slt,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "abcf",
+      "address": 9216,
+      "text": "calli cc_slt,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "de88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).13",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "dff1",
+      "address": 9216,
+      "text": "bset r1.13",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "dd00",
+      "address": 11272190,
+      "text": "jmpr cc_sge,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "dd7f",
+      "address": 11272190,
+      "text": "jmpr cc_sge,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "dd80",
+      "address": 11272190,
+      "text": "jmpr cc_sge,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ddff",
+      "address": 11272190,
+      "text": "jmpr cc_sge,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ead03412",
+      "address": 11215872,
+      "text": "jmpa cc_sge,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "cad03412",
+      "address": 11215872,
+      "text": "calla cc_sge,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9cdf",
+      "address": 9216,
+      "text": "jmpi cc_sge,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "abdf",
+      "address": 9216,
+      "text": "calli cc_sge,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "ee88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).14",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "eff1",
+      "address": 9216,
+      "text": "bset r1.14",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "ed00",
+      "address": 11272190,
+      "text": "jmpr cc_ugt,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ed7f",
+      "address": 11272190,
+      "text": "jmpr cc_ugt,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "ed80",
+      "address": 11272190,
+      "text": "jmpr cc_ugt,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "edff",
+      "address": 11272190,
+      "text": "jmpr cc_ugt,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "eae03412",
+      "address": 11215872,
+      "text": "jmpa cc_ugt,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "cae03412",
+      "address": 11215872,
+      "text": "calla cc_ugt,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9cef",
+      "address": 9216,
+      "text": "jmpi cc_ugt,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "abef",
+      "address": 9216,
+      "text": "calli cc_ugt,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "fe88",
+      "address": 9216,
+      "text": "bclr bitoff(0x88).15",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "fff1",
+      "address": 9216,
+      "text": "bset r1.15",
+      "length": 2,
+      "manual": "M166 PDF p.48"
+    },
+    {
+      "bytes": "fd00",
+      "address": 11272190,
+      "text": "jmpr cc_ule,0xab0000",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "fd7f",
+      "address": 11272190,
+      "text": "jmpr cc_ule,0xab00fe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "fd80",
+      "address": 11272190,
+      "text": "jmpr cc_ule,0xabff00",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "fdff",
+      "address": 11272190,
+      "text": "jmpr cc_ule,0xabfffe",
+      "length": 2,
+      "manual": "M166 PDF p.78"
+    },
+    {
+      "bytes": "eaf03412",
+      "address": 11215872,
+      "text": "jmpa cc_ule,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "caf03412",
+      "address": 11215872,
+      "text": "calla cc_ule,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "9cff",
+      "address": 9216,
+      "text": "jmpi cc_ule,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.77"
+    },
+    {
+      "bytes": "abff",
+      "address": 9216,
+      "text": "calli cc_ule,[r15]",
+      "length": 2,
+      "manual": "M166 PDF p.51"
+    },
+    {
+      "bytes": "2a88f1a3",
+      "address": 9216,
+      "text": "bcmp r1.3,bitoff(0x88).10",
+      "length": 4,
+      "manual": "M166 PDF p.42"
+    },
+    {
+      "bytes": "3a88f1a3",
+      "address": 9216,
+      "text": "bmovn r1.3,bitoff(0x88).10",
+      "length": 4,
+      "manual": "M166 PDF p.46"
+    },
+    {
+      "bytes": "4a88f1a3",
+      "address": 9216,
+      "text": "bmov r1.3,bitoff(0x88).10",
+      "length": 4,
+      "manual": "M166 PDF p.45"
+    },
+    {
+      "bytes": "5a88f1a3",
+      "address": 9216,
+      "text": "bor r1.3,bitoff(0x88).10",
+      "length": 4,
+      "manual": "M166 PDF p.47"
+    },
+    {
+      "bytes": "6a88f1a3",
+      "address": 9216,
+      "text": "band r1.3,bitoff(0x88).10",
+      "length": 4,
+      "manual": "M166 PDF p.40"
+    },
+    {
+      "bytes": "7a88f1a3",
+      "address": 9216,
+      "text": "bxor r1.3,bitoff(0x88).10",
+      "length": 4,
+      "manual": "M166 PDF p.49"
+    },
+    {
+      "bytes": "0a885aa5",
+      "address": 9216,
+      "text": "bfldl bitoff(0x88),#0x5a,#0xa5",
+      "length": 4,
+      "manual": "M166 PDF p.44"
+    },
+    {
+      "bytes": "1a885aa5",
+      "address": 9216,
+      "text": "bfldh bitoff(0x88),#0xa5,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.43"
+    },
+    {
+      "bytes": "0e01",
+      "address": 9216,
+      "text": "bclr 0xfd02.0",
+      "length": 2,
+      "manual": "M166 PDF p.41"
+    },
+    {
+      "bytes": "8a8800f0",
+      "address": 16711678,
+      "text": "jb bitoff(0x88).15,0xfe0002",
+      "length": 4,
+      "manual": "M166 PDF p.74"
+    },
+    {
+      "bytes": "8a887ff0",
+      "address": 16711678,
+      "text": "jb bitoff(0x88).15,0xfe0100",
+      "length": 4,
+      "manual": "M166 PDF p.74"
+    },
+    {
+      "bytes": "8a8880f0",
+      "address": 16711678,
+      "text": "jb bitoff(0x88).15,0xfeff02",
+      "length": 4,
+      "manual": "M166 PDF p.74"
+    },
+    {
+      "bytes": "8a88fff0",
+      "address": 16711678,
+      "text": "jb bitoff(0x88).15,0xfe0000",
+      "length": 4,
+      "manual": "M166 PDF p.74"
+    },
+    {
+      "bytes": "9a8800f0",
+      "address": 16711678,
+      "text": "jnb bitoff(0x88).15,0xfe0002",
+      "length": 4,
+      "manual": "M166 PDF p.80"
+    },
+    {
+      "bytes": "9a887ff0",
+      "address": 16711678,
+      "text": "jnb bitoff(0x88).15,0xfe0100",
+      "length": 4,
+      "manual": "M166 PDF p.80"
+    },
+    {
+      "bytes": "9a8880f0",
+      "address": 16711678,
+      "text": "jnb bitoff(0x88).15,0xfeff02",
+      "length": 4,
+      "manual": "M166 PDF p.80"
+    },
+    {
+      "bytes": "9a88fff0",
+      "address": 16711678,
+      "text": "jnb bitoff(0x88).15,0xfe0000",
+      "length": 4,
+      "manual": "M166 PDF p.80"
+    },
+    {
+      "bytes": "aa8800f0",
+      "address": 16711678,
+      "text": "jbc bitoff(0x88).15,0xfe0002",
+      "length": 4,
+      "manual": "M166 PDF p.75"
+    },
+    {
+      "bytes": "aa887ff0",
+      "address": 16711678,
+      "text": "jbc bitoff(0x88).15,0xfe0100",
+      "length": 4,
+      "manual": "M166 PDF p.75"
+    },
+    {
+      "bytes": "aa8880f0",
+      "address": 16711678,
+      "text": "jbc bitoff(0x88).15,0xfeff02",
+      "length": 4,
+      "manual": "M166 PDF p.75"
+    },
+    {
+      "bytes": "aa88fff0",
+      "address": 16711678,
+      "text": "jbc bitoff(0x88).15,0xfe0000",
+      "length": 4,
+      "manual": "M166 PDF p.75"
+    },
+    {
+      "bytes": "ba8800f0",
+      "address": 16711678,
+      "text": "jnbs bitoff(0x88).15,0xfe0002",
+      "length": 4,
+      "manual": "M166 PDF p.81"
+    },
+    {
+      "bytes": "ba887ff0",
+      "address": 16711678,
+      "text": "jnbs bitoff(0x88).15,0xfe0100",
+      "length": 4,
+      "manual": "M166 PDF p.81"
+    },
+    {
+      "bytes": "ba8880f0",
+      "address": 16711678,
+      "text": "jnbs bitoff(0x88).15,0xfeff02",
+      "length": 4,
+      "manual": "M166 PDF p.81"
+    },
+    {
+      "bytes": "ba88fff0",
+      "address": 16711678,
+      "text": "jnbs bitoff(0x88).15,0xfe0000",
+      "length": 4,
+      "manual": "M166 PDF p.81"
+    },
+    {
+      "bytes": "bb00",
+      "address": 8388608,
+      "text": "callr 0x800002",
+      "length": 2,
+      "manual": "M166 PDF p.52"
+    },
+    {
+      "bytes": "bb7f",
+      "address": 8388608,
+      "text": "callr 0x800100",
+      "length": 2,
+      "manual": "M166 PDF p.52"
+    },
+    {
+      "bytes": "bb80",
+      "address": 8388608,
+      "text": "callr 0x80ff02",
+      "length": 2,
+      "manual": "M166 PDF p.52"
+    },
+    {
+      "bytes": "bbff",
+      "address": 8388608,
+      "text": "callr 0x800000",
+      "length": 2,
+      "manual": "M166 PDF p.52"
+    },
+    {
+      "bytes": "faab3412",
+      "address": 9216,
+      "text": "jmps 0xab,0x1234 -> 0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.79"
+    },
+    {
+      "bytes": "daab3412",
+      "address": 9216,
+      "text": "calls 0xab,0x1234 -> 0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.53"
+    },
+    {
+      "bytes": "e2f13412",
+      "address": 11215872,
+      "text": "pcall r1,0xab1234",
+      "length": 4,
+      "manual": "M166 PDF p.93"
+    },
+    {
+      "bytes": "ebf1",
+      "address": 9216,
+      "text": "retp r1",
+      "length": 2,
+      "manual": "M166 PDF p.100"
+    },
+    {
+      "bytes": "eb88",
+      "address": 9216,
+      "text": "retp reg(0x88)",
+      "length": 2,
+      "manual": "M166 PDF p.100"
+    },
+    {
+      "bytes": "ecf1",
+      "address": 9216,
+      "text": "push r1",
+      "length": 2,
+      "manual": "M166 PDF p.96"
+    },
+    {
+      "bytes": "ec88",
+      "address": 9216,
+      "text": "push reg(0x88)",
+      "length": 2,
+      "manual": "M166 PDF p.96"
+    },
+    {
+      "bytes": "fcf1",
+      "address": 9216,
+      "text": "pop r1",
+      "length": 2,
+      "manual": "M166 PDF p.94"
+    },
+    {
+      "bytes": "fc88",
+      "address": 9216,
+      "text": "pop reg(0x88)",
+      "length": 2,
+      "manual": "M166 PDF p.94"
+    },
+    {
+      "bytes": "0b1f",
+      "address": 9216,
+      "text": "mul r1,r15",
+      "length": 2,
+      "manual": "M166 PDF p.86"
+    },
+    {
+      "bytes": "1b1f",
+      "address": 9216,
+      "text": "mulu r1,r15",
+      "length": 2,
+      "manual": "M166 PDF p.87"
+    },
+    {
+      "bytes": "2b1f",
+      "address": 9216,
+      "text": "prior r1,r15",
+      "length": 2,
+      "manual": "M166 PDF p.95"
+    },
+    {
+      "bytes": "4bff",
+      "address": 9216,
+      "text": "div r15",
+      "length": 2,
+      "manual": "M166 PDF p.63"
+    },
+    {
+      "bytes": "5bff",
+      "address": 9216,
+      "text": "divu r15",
+      "length": 2,
+      "manual": "M166 PDF p.66"
+    },
+    {
+      "bytes": "6bff",
+      "address": 9216,
+      "text": "divl r15",
+      "length": 2,
+      "manual": "M166 PDF p.64"
+    },
+    {
+      "bytes": "7bff",
+      "address": 9216,
+      "text": "divlu r15",
+      "length": 2,
+      "manual": "M166 PDF p.65"
+    },
+    {
+      "bytes": "d700ff00",
+      "address": 9216,
+      "text": "exts #0xff,#1",
+      "length": 4,
+      "manual": "M166 PDF p.71"
+    },
+    {
+      "bytes": "dc0f",
+      "address": 9216,
+      "text": "exts r15,#1",
+      "length": 2,
+      "manual": "M166 PDF p.71"
+    },
+    {
+      "bytes": "d710ff00",
+      "address": 9216,
+      "text": "exts #0xff,#2",
+      "length": 4,
+      "manual": "M166 PDF p.71"
+    },
+    {
+      "bytes": "dc1f",
+      "address": 9216,
+      "text": "exts r15,#2",
+      "length": 2,
+      "manual": "M166 PDF p.71"
+    },
+    {
+      "bytes": "d720ff00",
+      "address": 9216,
+      "text": "exts #0xff,#3",
+      "length": 4,
+      "manual": "M166 PDF p.71"
+    },
+    {
+      "bytes": "dc2f",
+      "address": 9216,
+      "text": "exts r15,#3",
+      "length": 2,
+      "manual": "M166 PDF p.71"
+    },
+    {
+      "bytes": "d730ff00",
+      "address": 9216,
+      "text": "exts #0xff,#4",
+      "length": 4,
+      "manual": "M166 PDF p.71"
+    },
+    {
+      "bytes": "dc3f",
+      "address": 9216,
+      "text": "exts r15,#4",
+      "length": 2,
+      "manual": "M166 PDF p.71"
+    },
+    {
+      "bytes": "d740ff03",
+      "address": 9216,
+      "text": "extp #0x3ff,#1",
+      "length": 4,
+      "manual": "M166 PDF p.69"
+    },
+    {
+      "bytes": "dc4f",
+      "address": 9216,
+      "text": "extp r15,#1",
+      "length": 2,
+      "manual": "M166 PDF p.69"
+    },
+    {
+      "bytes": "d750ff03",
+      "address": 9216,
+      "text": "extp #0x3ff,#2",
+      "length": 4,
+      "manual": "M166 PDF p.69"
+    },
+    {
+      "bytes": "dc5f",
+      "address": 9216,
+      "text": "extp r15,#2",
+      "length": 2,
+      "manual": "M166 PDF p.69"
+    },
+    {
+      "bytes": "d760ff03",
+      "address": 9216,
+      "text": "extp #0x3ff,#3",
+      "length": 4,
+      "manual": "M166 PDF p.69"
+    },
+    {
+      "bytes": "dc6f",
+      "address": 9216,
+      "text": "extp r15,#3",
+      "length": 2,
+      "manual": "M166 PDF p.69"
+    },
+    {
+      "bytes": "d770ff03",
+      "address": 9216,
+      "text": "extp #0x3ff,#4",
+      "length": 4,
+      "manual": "M166 PDF p.69"
+    },
+    {
+      "bytes": "dc7f",
+      "address": 9216,
+      "text": "extp r15,#4",
+      "length": 2,
+      "manual": "M166 PDF p.69"
+    },
+    {
+      "bytes": "d780ff00",
+      "address": 9216,
+      "text": "extsr #0xff,#1",
+      "length": 4,
+      "manual": "M166 PDF p.72"
+    },
+    {
+      "bytes": "dc8f",
+      "address": 9216,
+      "text": "extsr r15,#1",
+      "length": 2,
+      "manual": "M166 PDF p.72"
+    },
+    {
+      "bytes": "d790ff00",
+      "address": 9216,
+      "text": "extsr #0xff,#2",
+      "length": 4,
+      "manual": "M166 PDF p.72"
+    },
+    {
+      "bytes": "dc9f",
+      "address": 9216,
+      "text": "extsr r15,#2",
+      "length": 2,
+      "manual": "M166 PDF p.72"
+    },
+    {
+      "bytes": "d7a0ff00",
+      "address": 9216,
+      "text": "extsr #0xff,#3",
+      "length": 4,
+      "manual": "M166 PDF p.72"
+    },
+    {
+      "bytes": "dcaf",
+      "address": 9216,
+      "text": "extsr r15,#3",
+      "length": 2,
+      "manual": "M166 PDF p.72"
+    },
+    {
+      "bytes": "d7b0ff00",
+      "address": 9216,
+      "text": "extsr #0xff,#4",
+      "length": 4,
+      "manual": "M166 PDF p.72"
+    },
+    {
+      "bytes": "dcbf",
+      "address": 9216,
+      "text": "extsr r15,#4",
+      "length": 2,
+      "manual": "M166 PDF p.72"
+    },
+    {
+      "bytes": "d7c0ff03",
+      "address": 9216,
+      "text": "extpr #0x3ff,#1",
+      "length": 4,
+      "manual": "M166 PDF p.70"
+    },
+    {
+      "bytes": "dccf",
+      "address": 9216,
+      "text": "extpr r15,#1",
+      "length": 2,
+      "manual": "M166 PDF p.70"
+    },
+    {
+      "bytes": "d7d0ff03",
+      "address": 9216,
+      "text": "extpr #0x3ff,#2",
+      "length": 4,
+      "manual": "M166 PDF p.70"
+    },
+    {
+      "bytes": "dcdf",
+      "address": 9216,
+      "text": "extpr r15,#2",
+      "length": 2,
+      "manual": "M166 PDF p.70"
+    },
+    {
+      "bytes": "d7e0ff03",
+      "address": 9216,
+      "text": "extpr #0x3ff,#3",
+      "length": 4,
+      "manual": "M166 PDF p.70"
+    },
+    {
+      "bytes": "dcef",
+      "address": 9216,
+      "text": "extpr r15,#3",
+      "length": 2,
+      "manual": "M166 PDF p.70"
+    },
+    {
+      "bytes": "d7f0ff03",
+      "address": 9216,
+      "text": "extpr #0x3ff,#4",
+      "length": 4,
+      "manual": "M166 PDF p.70"
+    },
+    {
+      "bytes": "dcff",
+      "address": 9216,
+      "text": "extpr r15,#4",
+      "length": 2,
+      "manual": "M166 PDF p.70"
+    },
+    {
+      "bytes": "d100",
+      "address": 9216,
+      "text": "atomic #1",
+      "length": 2,
+      "manual": "M166 PDF p.39"
+    },
+    {
+      "bytes": "d180",
+      "address": 9216,
+      "text": "extr #1",
+      "length": 2,
+      "manual": "M166 PDF p.68"
+    },
+    {
+      "bytes": "d110",
+      "address": 9216,
+      "text": "atomic #2",
+      "length": 2,
+      "manual": "M166 PDF p.39"
+    },
+    {
+      "bytes": "d190",
+      "address": 9216,
+      "text": "extr #2",
+      "length": 2,
+      "manual": "M166 PDF p.68"
+    },
+    {
+      "bytes": "d120",
+      "address": 9216,
+      "text": "atomic #3",
+      "length": 2,
+      "manual": "M166 PDF p.39"
+    },
+    {
+      "bytes": "d1a0",
+      "address": 9216,
+      "text": "extr #3",
+      "length": 2,
+      "manual": "M166 PDF p.68"
+    },
+    {
+      "bytes": "d130",
+      "address": 9216,
+      "text": "atomic #4",
+      "length": 2,
+      "manual": "M166 PDF p.39"
+    },
+    {
+      "bytes": "d1b0",
+      "address": 9216,
+      "text": "extr #4",
+      "length": 2,
+      "manual": "M166 PDF p.68"
+    },
+    {
+      "bytes": "9bfe",
+      "address": 9216,
+      "text": "trap #0x7f",
+      "length": 2,
+      "manual": "M166 PDF p.113"
+    },
+    {
+      "bytes": "a55aa5a5",
+      "address": 9216,
+      "text": "diswdt",
+      "length": 4,
+      "manual": "M166 PDF p.62"
+    },
+    {
+      "bytes": "b54ab5b5",
+      "address": 9216,
+      "text": "einit",
+      "length": 4,
+      "manual": "M166 PDF p.67"
+    },
+    {
+      "bytes": "87788787",
+      "address": 9216,
+      "text": "idle",
+      "length": 4,
+      "manual": "M166 PDF p.73"
+    },
+    {
+      "bytes": "97689797",
+      "address": 9216,
+      "text": "pwrdn",
+      "length": 4,
+      "manual": "M166 PDF p.97"
+    },
+    {
+      "bytes": "b748b7b7",
+      "address": 9216,
+      "text": "srst",
+      "length": 4,
+      "manual": "M166 PDF p.107"
+    },
+    {
+      "bytes": "a758a7a7",
+      "address": 9216,
+      "text": "srvwdt",
+      "length": 4,
+      "manual": "M166 PDF p.108"
+    },
+    {
+      "bytes": "cc00",
+      "address": 9216,
+      "text": "nop",
+      "length": 2,
+      "manual": "M166 PDF p.90"
+    },
+    {
+      "bytes": "cb00",
+      "address": 9216,
+      "text": "ret",
+      "length": 2,
+      "manual": "M166 PDF p.98"
+    },
+    {
+      "bytes": "db00",
+      "address": 9216,
+      "text": "rets",
+      "length": 2,
+      "manual": "M166 PDF p.101"
+    },
+    {
+      "bytes": "fb88",
+      "address": 9216,
+      "text": "reti",
+      "length": 2,
+      "manual": "M166 PDF p.99"
+    },
+    {
+      "bytes": "c6883412",
+      "address": 9216,
+      "text": "scxt reg(0x88),#0x1234",
+      "length": 4,
+      "manual": "M166 PDF p.104"
+    },
+    {
+      "bytes": "d6883412",
+      "address": 9216,
+      "text": "scxt reg(0x88),0x1234",
+      "length": 4,
+      "manual": "M166 PDF p.104"
+    },
+    {
+      "bytes": "e7f05a00",
+      "address": 9216,
+      "text": "movb rl0,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f100",
+      "address": 9216,
+      "text": "movb rl0,rl0",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "090f",
+      "address": 9216,
+      "text": "addb rl0,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7f15a00",
+      "address": 9216,
+      "text": "movb rh0,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f111",
+      "address": 9216,
+      "text": "movb rh0,rh0",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "091f",
+      "address": 9216,
+      "text": "addb rh0,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7f25a00",
+      "address": 9216,
+      "text": "movb rl1,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f122",
+      "address": 9216,
+      "text": "movb rl1,rl1",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "092f",
+      "address": 9216,
+      "text": "addb rl1,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7f35a00",
+      "address": 9216,
+      "text": "movb rh1,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f133",
+      "address": 9216,
+      "text": "movb rh1,rh1",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "093f",
+      "address": 9216,
+      "text": "addb rh1,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7f45a00",
+      "address": 9216,
+      "text": "movb rl2,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f144",
+      "address": 9216,
+      "text": "movb rl2,rl2",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "094f",
+      "address": 9216,
+      "text": "addb rl2,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7f55a00",
+      "address": 9216,
+      "text": "movb rh2,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f155",
+      "address": 9216,
+      "text": "movb rh2,rh2",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "095f",
+      "address": 9216,
+      "text": "addb rh2,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7f65a00",
+      "address": 9216,
+      "text": "movb rl3,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f166",
+      "address": 9216,
+      "text": "movb rl3,rl3",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "096f",
+      "address": 9216,
+      "text": "addb rl3,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7f75a00",
+      "address": 9216,
+      "text": "movb rh3,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f177",
+      "address": 9216,
+      "text": "movb rh3,rh3",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "097f",
+      "address": 9216,
+      "text": "addb rh3,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7f85a00",
+      "address": 9216,
+      "text": "movb rl4,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f188",
+      "address": 9216,
+      "text": "movb rl4,rl4",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "098f",
+      "address": 9216,
+      "text": "addb rl4,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7f95a00",
+      "address": 9216,
+      "text": "movb rh4,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f199",
+      "address": 9216,
+      "text": "movb rh4,rh4",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "099f",
+      "address": 9216,
+      "text": "addb rh4,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7fa5a00",
+      "address": 9216,
+      "text": "movb rl5,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f1aa",
+      "address": 9216,
+      "text": "movb rl5,rl5",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "09af",
+      "address": 9216,
+      "text": "addb rl5,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7fb5a00",
+      "address": 9216,
+      "text": "movb rh5,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f1bb",
+      "address": 9216,
+      "text": "movb rh5,rh5",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "09bf",
+      "address": 9216,
+      "text": "addb rh5,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7fc5a00",
+      "address": 9216,
+      "text": "movb rl6,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f1cc",
+      "address": 9216,
+      "text": "movb rl6,rl6",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "09cf",
+      "address": 9216,
+      "text": "addb rl6,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7fd5a00",
+      "address": 9216,
+      "text": "movb rh6,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f1dd",
+      "address": 9216,
+      "text": "movb rh6,rh6",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "09df",
+      "address": 9216,
+      "text": "addb rh6,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7fe5a00",
+      "address": 9216,
+      "text": "movb rl7,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f1ee",
+      "address": 9216,
+      "text": "movb rl7,rl7",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "09ef",
+      "address": 9216,
+      "text": "addb rl7,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7ff5a00",
+      "address": 9216,
+      "text": "movb rh7,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f1ff",
+      "address": 9216,
+      "text": "movb rh7,rh7",
+      "length": 2,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "09ff",
+      "address": 9216,
+      "text": "addb rh7,[r3+]",
+      "length": 2,
+      "manual": "M166 PDF p.33"
+    },
+    {
+      "bytes": "e7005aaa",
+      "address": 9216,
+      "text": "movb reg(0x00),#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "f3883412",
+      "address": 9216,
+      "text": "movb reg(0x88),0x1234",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "e6883412",
+      "address": 9216,
+      "text": "mov reg(0x88),#0x1234",
+      "length": 4,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "d5883412",
+      "address": 9216,
+      "text": "movbs 0x1234,reg(0x88)",
+      "length": 4,
+      "manual": "M166 PDF p.84"
+    },
+    {
+      "bytes": "4400",
+      "address": 9216,
+      "text": ".byte 0x44,0x00",
+      "length": 2,
+      "manual": "M166 PDF p.54"
+    },
+    {
+      "bytes": "4500",
+      "address": 9216,
+      "text": ".byte 0x45,0x00",
+      "length": 2,
+      "manual": "M166 PDF p.55"
+    },
+    {
+      "bytes": "3b00",
+      "address": 9216,
+      "text": ".byte 0x3b,0x00",
+      "length": 2,
+      "manual": "M166 PDF p.21"
+    },
+    {
+      "bytes": "cc01",
+      "address": 9216,
+      "text": ".byte 0xcc,0x01",
+      "length": 2,
+      "manual": "M166 PDF p.90"
+    },
+    {
+      "bytes": "cb01",
+      "address": 9216,
+      "text": ".byte 0xcb,0x01",
+      "length": 2,
+      "manual": "M166 PDF p.98"
+    },
+    {
+      "bytes": "db01",
+      "address": 9216,
+      "text": ".byte 0xdb,0x01",
+      "length": 2,
+      "manual": "M166 PDF p.101"
+    },
+    {
+      "bytes": "fb00",
+      "address": 9216,
+      "text": ".byte 0xfb,0x00",
+      "length": 2,
+      "manual": "M166 PDF p.99"
+    },
+    {
+      "bytes": "8111",
+      "address": 9216,
+      "text": ".byte 0x81,0x11",
+      "length": 2,
+      "manual": "M166 PDF p.88"
+    },
+    {
+      "bytes": "a111",
+      "address": 9216,
+      "text": ".byte 0xa1,0x11",
+      "length": 2,
+      "manual": "M166 PDF p.89"
+    },
+    {
+      "bytes": "4b12",
+      "address": 9216,
+      "text": ".byte 0x4b,0x12",
+      "length": 2,
+      "manual": "M166 PDF p.63"
+    },
+    {
+      "bytes": "5b12",
+      "address": 9216,
+      "text": ".byte 0x5b,0x12",
+      "length": 2,
+      "manual": "M166 PDF p.66"
+    },
+    {
+      "bytes": "6b12",
+      "address": 9216,
+      "text": ".byte 0x6b,0x12",
+      "length": 2,
+      "manual": "M166 PDF p.64"
+    },
+    {
+      "bytes": "7b12",
+      "address": 9216,
+      "text": ".byte 0x7b,0x12",
+      "length": 2,
+      "manual": "M166 PDF p.65"
+    },
+    {
+      "bytes": "d140",
+      "address": 9216,
+      "text": ".byte 0xd1,0x40",
+      "length": 2,
+      "manual": "M166 PDF p.39"
+    },
+    {
+      "bytes": "d1c0",
+      "address": 9216,
+      "text": ".byte 0xd1,0xc0",
+      "length": 2,
+      "manual": "M166 PDF p.68"
+    },
+    {
+      "bytes": "d101",
+      "address": 9216,
+      "text": ".byte 0xd1,0x01",
+      "length": 2,
+      "manual": "M166 PDF p.39"
+    },
+    {
+      "bytes": "9b01",
+      "address": 9216,
+      "text": ".byte 0x9b,0x01",
+      "length": 2,
+      "manual": "M166 PDF p.113"
+    },
+    {
+      "bytes": "eaf13412",
+      "address": 9216,
+      "text": ".byte 0xea,0xf1,0x34,0x12",
+      "length": 4,
+      "manual": "M166 PDF p.76"
+    },
+    {
+      "bytes": "caf13412",
+      "address": 9216,
+      "text": ".byte 0xca,0xf1,0x34,0x12",
+      "length": 4,
+      "manual": "M166 PDF p.50"
+    },
+    {
+      "bytes": "84f13412",
+      "address": 9216,
+      "text": ".byte 0x84,0xf1,0x34,0x12",
+      "length": 4,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "94f13412",
+      "address": 9216,
+      "text": ".byte 0x94,0xf1,0x34,0x12",
+      "length": 4,
+      "manual": "M166 PDF p.82"
+    },
+    {
+      "bytes": "a4f13412",
+      "address": 9216,
+      "text": ".byte 0xa4,0xf1,0x34,0x12",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "b4f13412",
+      "address": 9216,
+      "text": ".byte 0xb4,0xf1,0x34,0x12",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "82013412",
+      "address": 9216,
+      "text": ".byte 0x82,0x01,0x34,0x12",
+      "length": 4,
+      "manual": "M166 PDF p.58"
+    },
+    {
+      "bytes": "86013412",
+      "address": 9216,
+      "text": ".byte 0x86,0x01,0x34,0x12",
+      "length": 4,
+      "manual": "M166 PDF p.58"
+    },
+    {
+      "bytes": "92013412",
+      "address": 9216,
+      "text": ".byte 0x92,0x01,0x34,0x12",
+      "length": 4,
+      "manual": "M166 PDF p.59"
+    },
+    {
+      "bytes": "96013412",
+      "address": 9216,
+      "text": ".byte 0x96,0x01,0x34,0x12",
+      "length": 4,
+      "manual": "M166 PDF p.59"
+    },
+    {
+      "bytes": "a2013412",
+      "address": 9216,
+      "text": ".byte 0xa2,0x01,0x34,0x12",
+      "length": 4,
+      "manual": "M166 PDF p.56"
+    },
+    {
+      "bytes": "a6013412",
+      "address": 9216,
+      "text": ".byte 0xa6,0x01,0x34,0x12",
+      "length": 4,
+      "manual": "M166 PDF p.56"
+    },
+    {
+      "bytes": "b2013412",
+      "address": 9216,
+      "text": ".byte 0xb2,0x01,0x34,0x12",
+      "length": 4,
+      "manual": "M166 PDF p.57"
+    },
+    {
+      "bytes": "b6013412",
+      "address": 9216,
+      "text": ".byte 0xb6,0x01,0x34,0x12",
+      "length": 4,
+      "manual": "M166 PDF p.57"
+    },
+    {
+      "bytes": "d7011200",
+      "address": 9216,
+      "text": ".byte 0xd7,0x01,0x12,0x00",
+      "length": 4,
+      "manual": "M166 PDF p.71"
+    },
+    {
+      "bytes": "d7000001",
+      "address": 9216,
+      "text": ".byte 0xd7,0x00,0x00,0x01",
+      "length": 4,
+      "manual": "M166 PDF p.71"
+    },
+    {
+      "bytes": "d7400004",
+      "address": 9216,
+      "text": ".byte 0xd7,0x40,0x00,0x04",
+      "length": 4,
+      "manual": "M166 PDF p.69"
+    },
+    {
+      "bytes": "d7800001",
+      "address": 9216,
+      "text": ".byte 0xd7,0x80,0x00,0x01",
+      "length": 4,
+      "manual": "M166 PDF p.72"
+    },
+    {
+      "bytes": "d7c00004",
+      "address": 9216,
+      "text": ".byte 0xd7,0xc0,0x00,0x04",
+      "length": 4,
+      "manual": "M166 PDF p.70"
+    },
+    {
+      "bytes": "8a880031",
+      "address": 9216,
+      "text": ".byte 0x8a,0x88,0x00,0x31",
+      "length": 4,
+      "manual": "M166 PDF p.74"
+    },
+    {
+      "bytes": "9a880031",
+      "address": 9216,
+      "text": ".byte 0x9a,0x88,0x00,0x31",
+      "length": 4,
+      "manual": "M166 PDF p.80"
+    },
+    {
+      "bytes": "aa880031",
+      "address": 9216,
+      "text": ".byte 0xaa,0x88,0x00,0x31",
+      "length": 4,
+      "manual": "M166 PDF p.75"
+    },
+    {
+      "bytes": "ba880031",
+      "address": 9216,
+      "text": ".byte 0xba,0x88,0x00,0x31",
+      "length": 4,
+      "manual": "M166 PDF p.81"
+    },
+    {
+      "bytes": "a55aa500",
+      "address": 9216,
+      "text": ".byte 0xa5,0x5a,0xa5,0x00",
+      "length": 4,
+      "manual": "M166 PDF p.62"
+    },
+    {
+      "bytes": "b54ab500",
+      "address": 9216,
+      "text": ".byte 0xb5,0x4a,0xb5,0x00",
+      "length": 4,
+      "manual": "M166 PDF p.67"
+    },
+    {
+      "bytes": "87788700",
+      "address": 9216,
+      "text": ".byte 0x87,0x78,0x87,0x00",
+      "length": 4,
+      "manual": "M166 PDF p.73"
+    },
+    {
+      "bytes": "97689700",
+      "address": 9216,
+      "text": ".byte 0x97,0x68,0x97,0x00",
+      "length": 4,
+      "manual": "M166 PDF p.97"
+    },
+    {
+      "bytes": "b748b700",
+      "address": 9216,
+      "text": ".byte 0xb7,0x48,0xb7,0x00",
+      "length": 4,
+      "manual": "M166 PDF p.107"
+    },
+    {
+      "bytes": "a758a700",
+      "address": 9216,
+      "text": ".byte 0xa7,0x58,0xa7,0x00",
+      "length": 4,
+      "manual": "M166 PDF p.108"
+    },
+    {
+      "bytes": "a500a5a5",
+      "address": 9216,
+      "text": ".byte 0xa5,0x00,0xa5,0xa5",
+      "length": 4,
+      "manual": "M166 PDF p.62"
+    },
+    {
+      "bytes": "e7f15a00",
+      "address": 12286,
+      "text": "movb rh0,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "e7f15a00",
+      "address": 16382,
+      "text": "movb rh0,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "e7f15a00",
+      "address": 1245182,
+      "text": "movb rh0,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "e7f15a00",
+      "address": 16777210,
+      "text": "movb rh0,#0x5a",
+      "length": 4,
+      "manual": "M166 PDF p.83"
+    },
+    {
+      "bytes": "8300",
+      "address": 9216,
+      "text": ".byte 0x83,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "8500",
+      "address": 9216,
+      "text": ".byte 0x85,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "8b00",
+      "address": 9216,
+      "text": ".byte 0x8b,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "8c00",
+      "address": 9216,
+      "text": ".byte 0x8c,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "9300",
+      "address": 9216,
+      "text": ".byte 0x93,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "9500",
+      "address": 9216,
+      "text": ".byte 0x95,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "a300",
+      "address": 9216,
+      "text": ".byte 0xa3,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "b300",
+      "address": 9216,
+      "text": ".byte 0xb3,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "c100",
+      "address": 9216,
+      "text": ".byte 0xc1,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "c300",
+      "address": 9216,
+      "text": ".byte 0xc3,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "c700",
+      "address": 9216,
+      "text": ".byte 0xc7,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "d300",
+      "address": 9216,
+      "text": ".byte 0xd3,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "e300",
+      "address": 9216,
+      "text": ".byte 0xe3,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "e500",
+      "address": 9216,
+      "text": ".byte 0xe5,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "f500",
+      "address": 9216,
+      "text": ".byte 0xf5,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "f800",
+      "address": 9216,
+      "text": ".byte 0xf8,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    },
+    {
+      "bytes": "f900",
+      "address": 9216,
+      "text": ".byte 0xf9,0x00",
+      "length": 2,
+      "manual": "M166 PDF pp.21-25 (undefined opcode grid)"
+    }
+  ]
+}

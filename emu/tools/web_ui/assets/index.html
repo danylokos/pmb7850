@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>x55 Emulator</title>
+  <link rel="stylesheet" href="/app.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body class="asc0-visible">
+  <header class="app-bar">
+    <dl id="runtime-stats" class="runtime-stats" aria-label="Runtime statistics">
+      <div class="runtime-metric runtime-metric-status">
+        <dt>STATUS</dt>
+        <dd class="runtime-status">
+          <span id="connection-state" class="connection connecting" role="status" aria-live="polite">
+            <span class="connection-dot" aria-hidden="true"></span>
+            <span id="connection-label" class="visually-hidden">Connecting</span>
+          </span>
+          <span id="runtime-running" class="runtime-elapsed">--</span>
+        </dd>
+      </div>
+      <div class="runtime-metric">
+        <dt>TICKS</dt>
+        <dd id="runtime-ticks">--</dd>
+      </div>
+      <div class="runtime-metric">
+        <dt>TICK RATE <span id="measurement-stale" hidden>· STALE</span></dt>
+        <dd id="runtime-tick-rate">--</dd>
+      </div>
+      <div class="runtime-metric">
+        <dt>GUEST INSTR/S</dt>
+        <dd id="runtime-guest-rate">--</dd>
+      </div>
+      <div class="runtime-metric runtime-metric-pc">
+        <dt>PC</dt>
+        <dd id="runtime-pc">--</dd>
+      </div>
+    </dl>
+  </header>
+
+  <nav class="mobile-tabs" aria-label="Workspace">
+    <button id="tab-phone" class="mobile-tab active" type="button" aria-selected="true">Phone</button>
+    <button id="tab-files" class="mobile-tab" type="button" aria-selected="false">Files</button>
+  </nav>
+  <main class="workspace" data-mobile-view="phone">
+    <div class="device-stack" id="phone-view">
+    <aside id="capture-toolbar" class="capture-toolbar" aria-label="LCD capture" data-state="idle">
+      <button id="capture-screenshot" type="button" title="Screenshot LCD" aria-label="Screenshot LCD" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h4l2-3h6l2 3h4v13H3Z"/><circle cx="12" cy="13" r="4"/></svg>
+      </button>
+      <button id="capture-record" type="button" title="Record LCD" aria-label="Record LCD" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle class="record-symbol" cx="12" cy="12" r="7"/><rect class="stop-symbol" x="5" y="5" width="14" height="14" rx="1"/></svg>
+      </button>
+      <output id="capture-timer" aria-label="Recording elapsed time" aria-live="off" hidden>00:00</output>
+    </aside>
+    <section class="phone" aria-label="Phone controls">
+      <div class="speaker" aria-hidden="true"></div>
+      <div class="brand-row"><span>SIEMENS</span><span id="phone-model" class="model">--</span></div>
+      <div class="display-bezel">
+        <canvas id="lcd" width="101" height="64" aria-label="Phone LCD output"></canvas>
+      </div>
+
+      <div class="navigation">
+        <button class="key key-soft key-soft-left" data-key="soft-left" type="button" title="Left soft key (Q)" aria-label="Left soft key"><span></span></button>
+        <button class="key key-soft key-soft-right" data-key="soft-right" type="button" title="Right soft key (E)" aria-label="Right soft key"><span></span></button>
+        <button class="key key-call" data-key="send" type="button" title="Send" aria-label="Send">SEND</button>
+        <div class="direction-pad">
+          <button class="key key-nav key-up" data-key="up" type="button" title="Up" aria-label="Up">&#9650;</button>
+          <button class="key key-nav key-left" data-key="left" type="button" title="Left" aria-label="Left">&#9664;</button>
+          <button class="key key-nav key-right" data-key="right" type="button" title="Right" aria-label="Right">&#9654;</button>
+          <button class="key key-nav key-down" data-key="down" type="button" title="Down" aria-label="Down">&#9660;</button>
+        </div>
+        <button class="key key-end" data-key="power" type="button" title="Power / End" aria-label="Power or end">END</button>
+      </div>
+
+      <div class="number-pad">
+        <button class="key key-number" data-key="1" type="button"><strong>1</strong></button>
+        <button class="key key-number" data-key="2" type="button"><strong>2</strong><small>ABC</small></button>
+        <button class="key key-number" data-key="3" type="button"><strong>3</strong><small>DEF</small></button>
+        <button class="key key-number" data-key="4" type="button"><strong>4</strong><small>GHI</small></button>
+        <button class="key key-number" data-key="5" type="button"><strong>5</strong><small>JKL</small></button>
+        <button class="key key-number" data-key="6" type="button"><strong>6</strong><small>MNO</small></button>
+        <button class="key key-number" data-key="7" type="button"><strong>7</strong><small>PQRS</small></button>
+        <button class="key key-number" data-key="8" type="button"><strong>8</strong><small>TUV</small></button>
+        <button class="key key-number" data-key="9" type="button"><strong>9</strong><small>WXYZ</small></button>
+        <button class="key key-number" data-key="star" type="button" aria-label="Star"><strong>*</strong></button>
+        <button class="key key-number" data-key="0" type="button"><strong>0</strong><small>+</small></button>
+        <button class="key key-number" data-key="hash" type="button" aria-label="Hash"><strong>#</strong></button>
+      </div>
+    </section>
+    </div>
+    <aside id="files-panel" class="files-panel" aria-label="Phone files">
+      <header class="files-header">
+        <div>
+          <h1>Phone files</h1>
+          <p id="files-status" role="status">Not connected</p>
+        </div>
+        <button id="files-connect" class="primary-action" type="button">Connect</button>
+      </header>
+      <nav id="files-breadcrumbs" class="breadcrumbs" aria-label="Current folder"></nav>
+      <div class="files-toolbar">
+        <button id="files-refresh" type="button" disabled>Refresh</button>
+        <button id="files-upload" type="button" disabled>Upload</button>
+        <button id="files-mkdir" type="button" disabled>New folder</button>
+        <input id="files-upload-input" type="file" hidden>
+      </div>
+      <div id="files-error" class="files-error" role="alert" hidden></div>
+      <div class="files-table-wrap">
+        <table class="files-table">
+          <thead><tr><th>Name</th><th>Size</th><th><span class="visually-hidden">Actions</span></th></tr></thead>
+          <tbody id="files-list"><tr><td colspan="3" class="files-empty">Connect to browse A:</td></tr></tbody>
+        </table>
+      </div>
+    </aside>
+  </main>
+  <div id="capture-notice" class="capture-notice" role="status" hidden></div>
+  <section id="asc0-panel" class="asc0-panel" aria-label="ASC0 TX">
+    <div class="asc0-title">
+      <span>ASC0 TX</span>
+      <div class="asc0-actions">
+        <button id="asc0-copy" class="asc0-action asc0-copy" type="button"
+                title="Copy ASC0 TX output" aria-label="Copy ASC0 TX output" disabled></button>
+        <button id="asc0-minimize" class="asc0-action asc0-minimize" type="button"
+                title="Minimize ASC0 TX" aria-label="Minimize ASC0 TX"
+                aria-controls="asc0-output" aria-expanded="true"></button>
+      </div>
+    </div>
+    <pre id="asc0-output" class="asc0-output"></pre>
+  </section>
+</body>
+</html>

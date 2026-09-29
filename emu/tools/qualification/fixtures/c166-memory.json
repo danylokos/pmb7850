@@ -1,0 +1,706 @@
+{
+  "initial": {
+    "pc": 8192,
+    "cp": 64512,
+    "sp": 64512,
+    "stkov": 64000,
+    "stkun": 64512,
+    "psw": 0,
+    "syscon": 0,
+    "ext_kind": 0,
+    "ext_value": 0,
+    "ext_count": 0,
+    "extr": 0,
+    "guest_icount": 0,
+    "r0": 0,
+    "r1": 0,
+    "r2": 0,
+    "r3": 0,
+    "r4": 0,
+    "r5": 0,
+    "r6": 0,
+    "r7": 0,
+    "r8": 0,
+    "r9": 0,
+    "r10": 0,
+    "r11": 0,
+    "r12": 0,
+    "r13": 0,
+    "r14": 0,
+    "r15": 0
+  },
+  "cases": [
+    {
+      "name": "store",
+      "manual": "M166 absolute PDF p.82; C166S V1 PDF pp.60-67,82-95",
+      "code": "f6f00030",
+      "initial": {
+        "r0": 4660
+      },
+      "expected": {
+        "r0": 4660,
+        "sp": 64512
+      },
+      "memory": {
+        "0x3000": "3412"
+      },
+      "watches": [
+        [
+          "awatch",
+          12288,
+          2
+        ],
+        [
+          "rwatch",
+          64512,
+          2
+        ]
+      ],
+      "pc": 8196,
+      "setup_memory": {
+        "0x3000": "0000"
+      }
+    },
+    {
+      "name": "load",
+      "manual": "M166 absolute PDF p.82; C166S V1 PDF pp.60-67,82-95",
+      "code": "f2f00030",
+      "initial": {},
+      "expected": {
+        "r0": 4660
+      },
+      "memory": {
+        "0x3000": "3412"
+      },
+      "watches": [
+        [
+          "rwatch",
+          12288,
+          2
+        ],
+        [
+          "watch",
+          64512,
+          2
+        ]
+      ],
+      "pc": 8196,
+      "setup_memory": {
+        "0x3000": "3412"
+      }
+    },
+    {
+      "name": "movb-rh",
+      "manual": "M166 absolute PDF p.83; C166S V1 PDF pp.60-67,82-95",
+      "code": "e7f13400",
+      "initial": {
+        "r0": 22136
+      },
+      "expected": {
+        "r0": 13432
+      },
+      "memory": {},
+      "watches": [
+        [
+          "awatch",
+          64513,
+          1
+        ]
+      ],
+      "pc": 8196,
+      "setup_memory": {}
+    },
+    {
+      "name": "predecrement",
+      "manual": "M166 absolute PDF p.82; C166S V1 PDF pp.60-67,82-95",
+      "code": "8801",
+      "initial": {
+        "r0": 4660,
+        "r1": 12290
+      },
+      "expected": {
+        "r0": 4660,
+        "r1": 12288
+      },
+      "memory": {
+        "0x3000": "3412"
+      },
+      "watches": [
+        [
+          "awatch",
+          12288,
+          2
+        ],
+        [
+          "watch",
+          64514,
+          2
+        ]
+      ],
+      "pc": 8194,
+      "setup_memory": {
+        "0x3000": "0000"
+      }
+    },
+    {
+      "name": "postincrement",
+      "manual": "M166 absolute PDF p.82; C166S V1 PDF pp.60-67,82-95",
+      "code": "9801",
+      "initial": {
+        "r1": 12288
+      },
+      "expected": {
+        "r0": 4660,
+        "r1": 12290
+      },
+      "memory": {
+        "0x3000": "3412"
+      },
+      "watches": [
+        [
+          "rwatch",
+          12288,
+          2
+        ],
+        [
+          "watch",
+          64512,
+          2
+        ],
+        [
+          "watch",
+          64514,
+          2
+        ]
+      ],
+      "pc": 8194,
+      "setup_memory": {
+        "0x3000": "3412"
+      }
+    },
+    {
+      "name": "memory-to-memory",
+      "manual": "M166 absolute PDF p.82; C166S V1 PDF pp.60-67,82-95",
+      "code": "c801",
+      "initial": {
+        "r0": 12288,
+        "r1": 12544
+      },
+      "expected": {
+        "r0": 12288,
+        "r1": 12544
+      },
+      "memory": {
+        "0x3000": "3412",
+        "0x3100": "3412"
+      },
+      "watches": [
+        [
+          "rwatch",
+          12544,
+          2
+        ],
+        [
+          "awatch",
+          12288,
+          2
+        ]
+      ],
+      "pc": 8194,
+      "setup_memory": {
+        "0x3000": "0000",
+        "0x3100": "3412"
+      }
+    },
+    {
+      "name": "memory-post-dest",
+      "manual": "M166 absolute PDF p.82; C166S V1 PDF pp.60-67,82-95",
+      "code": "d801",
+      "initial": {
+        "r0": 12288,
+        "r1": 12544
+      },
+      "expected": {
+        "r0": 12290,
+        "r1": 12544
+      },
+      "memory": {
+        "0x3000": "3412",
+        "0x3100": "3412"
+      },
+      "watches": [
+        [
+          "rwatch",
+          12544,
+          2
+        ],
+        [
+          "awatch",
+          12288,
+          2
+        ],
+        [
+          "watch",
+          64512,
+          2
+        ]
+      ],
+      "pc": 8194,
+      "setup_memory": {
+        "0x3000": "0000",
+        "0x3100": "3412"
+      }
+    },
+    {
+      "name": "memory-post-source",
+      "manual": "M166 absolute PDF p.82; C166S V1 PDF pp.60-67,82-95",
+      "code": "e801",
+      "initial": {
+        "r0": 12288,
+        "r1": 12544
+      },
+      "expected": {
+        "r0": 12288,
+        "r1": 12546
+      },
+      "memory": {
+        "0x3000": "3412",
+        "0x3100": "3412"
+      },
+      "watches": [
+        [
+          "rwatch",
+          12544,
+          2
+        ],
+        [
+          "awatch",
+          12288,
+          2
+        ],
+        [
+          "watch",
+          64514,
+          2
+        ]
+      ],
+      "pc": 8194,
+      "setup_memory": {
+        "0x3000": "0000",
+        "0x3100": "3412"
+      }
+    },
+    {
+      "name": "push",
+      "manual": "M166 absolute PDF p.96; C166S V1 PDF pp.60-67,82-95",
+      "code": "ecf0",
+      "initial": {
+        "r0": 4660
+      },
+      "expected": {
+        "sp": 64510,
+        "r0": 4660
+      },
+      "memory": {
+        "0xfbfe": "3412"
+      },
+      "watches": [
+        [
+          "rwatch",
+          64512,
+          2
+        ],
+        [
+          "awatch",
+          64510,
+          2
+        ]
+      ],
+      "pc": 8194,
+      "setup_memory": {
+        "0xfbfe": "a5a5"
+      }
+    },
+    {
+      "name": "pop",
+      "manual": "M166 absolute PDF p.94; C166S V1 PDF pp.60-67,82-95",
+      "code": "fcf0",
+      "initial": {
+        "sp": 64510
+      },
+      "expected": {
+        "sp": 64512,
+        "r0": 4660
+      },
+      "memory": {
+        "0xfbfe": "3412"
+      },
+      "watches": [
+        [
+          "rwatch",
+          64510,
+          2
+        ],
+        [
+          "watch",
+          64512,
+          2
+        ]
+      ],
+      "pc": 8194,
+      "setup_memory": {
+        "0xfbfe": "3412"
+      }
+    },
+    {
+      "name": "calla",
+      "manual": "M166 absolute PDF p.50; C166S V1 PDF pp.60-67,82-95",
+      "code": "ca000030",
+      "initial": {},
+      "expected": {
+        "guest_icount": 1,
+        "pc": 12288,
+        "sp": 64510
+      },
+      "memory": {
+        "0xfbfe": "0420"
+      },
+      "watches": [
+        [
+          "awatch",
+          64510,
+          2
+        ]
+      ],
+      "pc": 12288,
+      "setup_memory": {
+        "0xfbfe": "a5a5"
+      }
+    },
+    {
+      "name": "calli",
+      "manual": "M166 absolute PDF p.51; C166S V1 PDF pp.60-67,82-95",
+      "code": "ab03",
+      "initial": {
+        "r3": 12288
+      },
+      "expected": {
+        "guest_icount": 1,
+        "pc": 12288,
+        "sp": 64510
+      },
+      "memory": {
+        "0xfbfe": "0220"
+      },
+      "watches": [
+        [
+          "awatch",
+          64510,
+          2
+        ]
+      ],
+      "pc": 12288,
+      "setup_memory": {
+        "0xfbfe": "a5a5"
+      }
+    },
+    {
+      "name": "callr",
+      "manual": "M166 absolute PDF p.52; C166S V1 PDF pp.60-67,82-95",
+      "code": "bb04",
+      "initial": {},
+      "expected": {
+        "guest_icount": 1,
+        "pc": 8202,
+        "sp": 64510
+      },
+      "memory": {
+        "0xfbfe": "0220"
+      },
+      "watches": [
+        [
+          "awatch",
+          64510,
+          2
+        ]
+      ],
+      "pc": 8202,
+      "setup_memory": {
+        "0xfbfe": "a5a5"
+      }
+    },
+    {
+      "name": "calls",
+      "manual": "M166 absolute PDF p.53; C166S V1 PDF pp.60-67,82-95",
+      "code": "da050030",
+      "initial": {},
+      "expected": {
+        "guest_icount": 1,
+        "pc": 339968,
+        "sp": 64508
+      },
+      "memory": {
+        "0xfbfc": "04200000"
+      },
+      "watches": [
+        [
+          "awatch",
+          64508,
+          2
+        ],
+        [
+          "awatch",
+          64510,
+          2
+        ]
+      ],
+      "pc": 339968,
+      "setup_memory": {
+        "0xfbfc": "a5a5a5a5"
+      }
+    },
+    {
+      "name": "pcall",
+      "manual": "M166 absolute PDF p.93; C166S V1 PDF pp.60-67,82-95",
+      "code": "e2f10030",
+      "initial": {
+        "r1": 32768
+      },
+      "expected": {
+        "guest_icount": 1,
+        "pc": 12288,
+        "sp": 64508,
+        "psw": 17
+      },
+      "memory": {
+        "0xfbfc": "04200080"
+      },
+      "watches": [
+        [
+          "awatch",
+          64508,
+          2
+        ],
+        [
+          "awatch",
+          64510,
+          2
+        ]
+      ],
+      "pc": 12288,
+      "setup_memory": {
+        "0xfbfc": "a5a5a5a5"
+      }
+    },
+    {
+      "name": "ret",
+      "manual": "M166 absolute PDF p.98; C166S V1 PDF pp.60-67,82-95",
+      "code": "cb00",
+      "initial": {
+        "sp": 64510
+      },
+      "expected": {
+        "sp": 64512
+      },
+      "memory": {
+        "0xfbfe": "0030"
+      },
+      "watches": [
+        [
+          "rwatch",
+          64510,
+          2
+        ]
+      ],
+      "pc": 12288,
+      "setup_memory": {
+        "0xfbfe": "0030"
+      }
+    },
+    {
+      "name": "rets",
+      "manual": "M166 absolute PDF p.101; C166S V1 PDF pp.60-67,82-95",
+      "code": "db00",
+      "initial": {
+        "sp": 64508
+      },
+      "expected": {
+        "sp": 64512,
+        "csp": 0
+      },
+      "memory": {
+        "0xfbfc": "00300000"
+      },
+      "watches": [
+        [
+          "rwatch",
+          64508,
+          2
+        ],
+        [
+          "rwatch",
+          64510,
+          2
+        ]
+      ],
+      "pc": 12288,
+      "setup_memory": {
+        "0xfbfc": "00300000"
+      }
+    },
+    {
+      "name": "retp",
+      "manual": "M166 absolute PDF p.100; C166S V1 PDF pp.60-67,82-95",
+      "code": "ebf2",
+      "initial": {
+        "sp": 64508
+      },
+      "expected": {
+        "sp": 64512,
+        "r2": 4660
+      },
+      "memory": {
+        "0xfbfc": "00303412"
+      },
+      "watches": [
+        [
+          "rwatch",
+          64508,
+          2
+        ],
+        [
+          "rwatch",
+          64510,
+          2
+        ],
+        [
+          "watch",
+          64516,
+          2
+        ]
+      ],
+      "pc": 12288,
+      "setup_memory": {
+        "0xfbfc": "00303412"
+      }
+    },
+    {
+      "name": "reti",
+      "manual": "M166 absolute PDF p.99; C166S V1 PDF pp.60-67,82-95",
+      "code": "fb88",
+      "initial": {
+        "sp": 64506
+      },
+      "expected": {
+        "sp": 64512,
+        "psw": 0
+      },
+      "memory": {
+        "0xfbfa": "003000000000"
+      },
+      "watches": [
+        [
+          "rwatch",
+          64506,
+          2
+        ],
+        [
+          "rwatch",
+          64508,
+          2
+        ],
+        [
+          "rwatch",
+          64510,
+          2
+        ]
+      ],
+      "pc": 12288,
+      "setup_memory": {
+        "0xfbfa": "003000000000"
+      }
+    },
+    {
+      "name": "scxt-cp",
+      "manual": "M166 absolute PDF p.104; C166S V1 PDF pp.60-67,82-95",
+      "code": "c60820fc",
+      "initial": {},
+      "expected": {
+        "sp": 64510,
+        "cp": 64544
+      },
+      "memory": {
+        "0xfbfe": "00fc"
+      },
+      "watches": [
+        [
+          "awatch",
+          64510,
+          2
+        ]
+      ],
+      "pc": 8196,
+      "setup_memory": {
+        "0xfbfe": "a5a5"
+      }
+    },
+    {
+      "name": "scxt-sp-source",
+      "manual": "M166 absolute PDF p.104; C166S V1 PDF pp.60-67,82-95",
+      "code": "d60812fe",
+      "initial": {},
+      "expected": {
+        "sp": 64510,
+        "cp": 64510
+      },
+      "memory": {
+        "0xfbfe": "00fc"
+      },
+      "watches": [
+        [
+          "awatch",
+          64510,
+          2
+        ],
+        [
+          "rwatch",
+          65042,
+          2
+        ]
+      ],
+      "pc": 8196,
+      "setup_memory": {
+        "0xfbfe": "a5a5"
+      },
+      "machines": [
+        "pmb7850-test"
+      ]
+    },
+    {
+      "name": "add-memory",
+      "manual": "M166 absolute PDF p.32; C166S V1 PDF pp.60-67,82-95",
+      "code": "04f00030",
+      "initial": {
+        "r0": 1
+      },
+      "expected": {
+        "r0": 1,
+        "psw": 0
+      },
+      "memory": {
+        "0x3000": "0200"
+      },
+      "watches": [
+        [
+          "awatch",
+          12288,
+          2
+        ]
+      ],
+      "pc": 8196,
+      "setup_memory": {
+        "0x3000": "0100"
+      }
+    }
+  ]
+}
